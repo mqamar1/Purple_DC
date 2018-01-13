@@ -4,8 +4,6 @@
 #map {
   height: 350px;
   width: 500px;
-  margin-left: 400px;
-  margin-top: 50px;
 }
 html,
 body {
@@ -13,7 +11,6 @@ body {
   margin: 0;
   padding: 0;
 }
-/* CSS that we can update for what our map displays
 #description {
   font-family: 'Oswald', sans-serif;
   font-size: 15px;
