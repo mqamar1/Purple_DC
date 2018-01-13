@@ -26,7 +26,7 @@
   <div class="row">
     <!--Places and Tourism options-->
     <div class="col-md-3">
-
+<h1>Recommended in the D.C Area: </h1>
 <div class="form-check">
   <input class="form-check-input" type="radio" name="option" id="Restaurant" value="option1">
   <label class="form-check-label" for="Restaurant">
@@ -54,10 +54,11 @@
 </div>
 <!--Google Maps Display-->
 <div class="col-md-9">
-  <div id="googleMaps">
-  <p>Google Maps API</p>
+  <div class="map">
+    <h1>Search a location & activity to display in the current extent:</h1>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
   </div>
-
 </div>
 
 </div>
@@ -114,6 +115,8 @@
 
 
 	</div>-
-
+  <!--Google Maps Script-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
+  <script type="text/javascript" src="googlemaps.js"></script>
 </body>
 </html>
