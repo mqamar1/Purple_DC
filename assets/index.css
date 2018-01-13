@@ -1,53 +1,59 @@
-h1, h2, label, p {
+h1, h2, label, p, h3 {
   color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
   .jumbotron-fluid{
     color: purple;
     background: url("https://static1.squarespace.com/static/555d1c13e4b04fe4b79cf7c0/55a58398e4b0d46084e01c89/55a58406e4b0ffc7052b0ccd/1436910603011/DC+Monument+Shoot_Washington+Monument-Pano-Edit.jpg?format=2500w");
     background-position: center;
     background-size: cover;
-    position: static;
     padding-bottom: 35px;
     border-bottom: 3px solid black;
   }
 body{
   background: url("http://cdn.gossrv.com/cdn/farfuture/dxdxLedZTgxCOmxyIRXZFLjWHB_7mhEsC8YypZ_QV5o/1501256217/sites/default/files/2016-12/WashingtonDCWinter.jpg");
   background-position: top;
-  background-size: 100%;
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: cover;
   font-family: 'Josefin Slab', serif;
 }
 .col-md-3{
-  color: red;
-  border: 3px solid red;
+
   padding-bottom: 40px;
   padding-right: 20px;
-  height: 200px;
+
 }
-.col-md-9{
-  color:red;
-  border: 3px solid purple;
+.attractions {
+
 }
 .imgSection{
-  border: 3px solid teal;
-  height: 500px;
+
+  padding-bottom: 100px;
 }
 .form-check{
   padding: 10px;
 }
 
-.col-md-4{
-  border: 3px solid black;
-}
+
 img{
   background-size:cover;
+}
+
+label{
+  font-size: 20px;
+  padding-right:20px;
+}
+
+.lead{
+  font-size: 30px;
 }
 /*------------------------------------------------------------------------------
 /*GOOGLE-MAPS CSS
 ------------------------------------------------------------------------------*/
 #map {
   height: 350px;
-  width: 500px;
-  float: right;
+  width: 550px;
   z-index: 10;
 }
 html,
@@ -57,25 +63,20 @@ body {
   padding: 0;
 }
 #description {
-  color: black !important;
   font-family: 'Josefin Slab', serif;
   font-size: 15px;
   font-weight: 300;
 }
 #infowindow-content .title {
-  color: black !important;
   font-weight: bold;
 }
 #infowindow-content {
-  color: black !important;
   display: none;
 }
 #map #infowindow-content {
-  color: black !important;
   display: inline;
 }
 .pac-card {
-  color: black !important;
   margin: 10px 10px 0 0;
   border-radius: 2px 0 0 2px;
   box-sizing: border-box;
@@ -86,34 +87,30 @@ body {
   font-family: 'Josefin Slab', serif;
 }
 #pac-container {
-  color: black !important;
   padding-bottom: 12px;
   margin-right: 12px;
 }
 .pac-controls {
-  color: black !important;
   display: inline-block;
   padding: 5px 11px;
 }
 .pac-controls label {
-  color: black !important;
   font-family: 'Josefin Slab', serif;
   font-size: 13px;
   font-weight: 300;
 }
 #pac-input {
-  color: black !important;
   background-color: #fff;
   font-family: 'Josefin Slab', serif;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 25px;
+  font-weight: bold;
   margin-left: 12px;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  width: 45%;
+  margin: 10px;
+  width: 65%;
 }
 #pac-input:focus {
-  color: black !important;
   border-color: #4d90fe;
 }
 #title {
@@ -124,8 +121,28 @@ body {
   padding: 6px 12px;
 }
 #target {
-  color: black !important;
   width: 345px;
+}
+input#pac-input.controls {
+  border: 2px white solid;
+  animation: pulse 2s 30;
+}
+@keyframes pulse {
+  0% {
+    border: 2px white solid;
+  }
+  25% {
+    border: 2px #edbcbd solid;
+  }
+  50% {
+    border: 2px #e18f92 solid;
+  }
+  75% {
+    border: 2px #cf4c50 solid;
+  }
+  100% {
+    border: 2px #c42025 solid;
+  }
 }
 /*------------------------------------------------------------------------------
 /*GOOGLE-MAPS CSS
