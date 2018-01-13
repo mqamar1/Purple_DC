@@ -1,7 +1,9 @@
 function googleMaps() {
   //MarkerName and Array used to link with FourSquare
   var markerName = ""
+  /*
   var markersNameArray = []
+  */
   //creates map in HTML centered on Washington, D.C.
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 38.9072,lng: -77.0369},
@@ -60,8 +62,10 @@ function googleMaps() {
           google.maps.event.addListener(marker, 'click', function() {
             markerName = marker.title
             console.log(markerName)
+            /*
             markersNameArray.push(markerName)
             console.log(markersNameArray)
+            */
           })
             if (place.geometry.viewport) {
               // Only geocodes have viewport.
