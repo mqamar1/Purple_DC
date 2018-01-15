@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="assets\reset.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
 	<title>Purple Entertainment</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 	<!-- Google Font -->
@@ -57,14 +58,37 @@
       </label>
     </div>
 
-<div class="col-md-6"></div>
+<div class="col-md-6">
+  <input type="submit" name="Locations" value="Locations" id="Locations">
+  <input type="submit" name="Directions" value="Directions">
+  <input type="submit" name="Weather" value="Weather">
+</div>
 <!--Google Maps Display-->
 <div class="map col-md-6">
+    <!--First Map -->
     <h3>Search a location & activity to display in the current extent:</h3>
     <input id="pac-input" class="controls" type="text" placeholder="Search Locations">
     <div id="map"></div>
-  </div>
 </div>
+<!--
+<div class="map col-md-6">
+
+    <h3>Obtain directions for selected location:</h3>
+    <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
+    <input id="destination-input" class="controls" type="text" placeholder="Enter a destination location">
+    <div id="mode-selector" class="controls">
+      <input type="radio" name="type" id="changemode-walking">
+      <label for="changemode-walking">Walking</label>
+
+      <input type="radio" name="type" id="changemode-transit">
+      <label for="changemode-transit">Transit</label>
+
+      <input type="radio" name="type" id="changemode-driving" checked="checked">
+      <label for="changemode-driving">Driving</label>
+    </div>
+    <div id="map2"></div>
+</div>
+-->
 
 <!-- image and comments section-->
 
@@ -103,9 +127,11 @@
 </div>
 
 
-	</div>-
+	</div>
+  <!--jQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!--Google Maps Script-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=initMap" async defer></script>
   <script type="text/javascript" src="googlemaps.js"></script>
 </body>
 </html>

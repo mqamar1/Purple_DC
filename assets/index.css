@@ -11,7 +11,8 @@ h1, h2, label, p, h3 {
     border-bottom: 3px solid black;
   }
 body{
-  background: url("http://cdn.gossrv.com/cdn/farfuture/dxdxLedZTgxCOmxyIRXZFLjWHB_7mhEsC8YypZ_QV5o/1501256217/sites/default/files/2016-12/WashingtonDCWinter.jpg");
+  background: url("https://wallpapercave.com/wp/aFgmc1h.png");
+  background-color: purple;
   background-position: top;
   background-repeat: no-repeat;
     background-attachment: fixed;
@@ -52,6 +53,11 @@ label{
 /*GOOGLE-MAPS CSS
 ------------------------------------------------------------------------------*/
 #map {
+  height: 350px;
+  width: 550px;
+  border: black solid 5px;
+}
+#map2 {
   height: 350px;
   width: 550px;
   border: black solid 5px;
@@ -100,10 +106,9 @@ body {
   background-color: #fff;
   font-size: 19px;
   font-weight: bold;
-  margin-left: 12px;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
   width: 65%;
 }
 #pac-input:focus {
