@@ -18,18 +18,16 @@ $("#weatherSubmit").on("click", function(){
           console.log(responseArray)
           for (var i = 0; i < responseArray.length; i++) {
 
-            var date = response[i].dt_txt
-            var minTemp = response[i].main.temp_min
-            var maxTemp = response[i].main.temp_max
-            var weather = response[i].weather["0"].main
-            var detailWeather = response[i].weather["0"].description
-            var fullWeather = weather + "-" + detailWeather
 
+            var date = responseArray[i].dt_txt
 
-            var eachDayDiv = $("<div>")
-            var 
+            var minTemp = responseArray[i].main.temp_min
+            var maxTemp = responseArray[i].main.temp_max
+            var weather = responseArray[i].weather["0"].main
 
+            console.log(date, minTemp, maxTemp, weather)
 
+            //create containers tmrw
 
           }
 
