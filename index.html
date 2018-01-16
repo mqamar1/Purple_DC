@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" href="assets\reset.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Purple Entertainment</title>
+  <title>Purple Entertainment</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-	<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
-	<!-- Jquery Cdn -->
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
 
   <!-- Bootstrap-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
-<link rel="stylesheet" href="assets\index.css">
+  <link rel="stylesheet" href="assets\index.css">
 
 </head>
+
 <body>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -22,90 +23,99 @@
       <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
     </div>
   </div>
-<div class="container">
-<div class="row">
-  <div class="col-md-6"></div>
-  <div class="col-md-6">
-    <!--Places and Tourism options-->
-  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6"></div>
+      <div class="col-md-6">
+        <!--Places and Tourism options-->
+      </div>
 
-</div>
-  <div class="row">
-<div class="col-md-6"></div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="option" id="Restaurant" value="option1">
-      <label class="form-check-label" for="Restaurant">
+    </div>
+    <div class="row">
+      <div class="col-md-6"></div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="option" id="Restaurant" value="option1">
+        <label class="form-check-label" for="Restaurant">
         Restaurant
       </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="option" id="Monuments" value="option2">
-      <label class="form-check-label" for="Monuments">
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="option" id="Monuments" value="option2">
+        <label class="form-check-label" for="Monuments">
         Monuments
       </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="option" id="Hotels" value="option3">
-      <label class="form-check-label" for="Hotels">
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="option" id="Hotels" value="option3">
+        <label class="form-check-label" for="Hotels">
         Hotels
       </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="option" id="Clubs-Bars" value="option4">
-      <label class="form-check-label" for="Clubs-Bars">
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="option" id="Clubs-Bars" value="option4">
+        <label class="form-check-label" for="Clubs-Bars">
         Clubs and Bars
       </label>
+      </div>
+
+      <div class="col-md-6"></div>
+      <!--Google Maps Display-->
+      <div class="map col-md-6">
+        <h3>Search a location & activity to display in the current extent:</h3>
+        <input id="pac-input" class="controls" type="text" placeholder="Search Locations">
+        <div id="map"></div>
+      </div>
     </div>
 
-<div class="col-md-6"></div>
-<!--Google Maps Display-->
-<div class="map col-md-6">
-    <h3>Search a location & activity to display in the current extent:</h3>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Locations">
-    <div id="map"></div>
-  </div>
-</div>
+    <!-- image and comments section-->
 
-<!-- image and comments section-->
-
-<h2>Company Information</h2>
-<div class="row">
-  <div class="imgSection col-lg-12">
-  </div>
-</div>
-</div>
-
-<!--Form Section-->
-<div class="row">
-  <div class="col-md-2"></div>
-<div class="col-md-8">
-
-  <form id="userinput">
-    <div class="form-group">
-      <label for="nameinput">Email address</label>
-      <input type="text" class="form-control" id="nameinput" placeholder="Your Name">
+    <h2>Company Information</h2>
+    <div class="row">
+      <div class="imgSection col-lg-12">
+      </div>
     </div>
-  <div class="form-group">
-    <label for="emailinput">Email address</label>
-    <input type="email" class="form-control" id="emailinput" placeholder="name@example.com">
   </div>
-  <div class="form-group">
-    <label for="comments">Comments</label>
-    <textarea class="form-control" id="comments" rows="3"placeholder="Feedback"></textarea>
+
+  <!--Form Section-->
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+      <form id="userinput">
+        <div class="form-group">
+          <label for="nameinput">Email address</label>
+          <input type="text" class="form-control" id="nameinput" placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label for="emailinput">Email address</label>
+          <input type="email" class="form-control" id="emailinput" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="comments">Comments</label>
+          <textarea class="form-control" id="comments" rows="3" placeholder="Feedback"></textarea>
+        </div>
+      </form>
+      <input class="btn btn-primary" type="submit" form="userinput">
+    </div>
+    <div class="col-md-2"></div>
   </div>
-</form>
-<input class="btn btn-primary" type="submit" form="userinput">
-</div>
-<div class="col-md-2"></div>
-</div>
-</div>
+  </div>
 
-</div>
+  </div>
 
 
-	</div>-
+  </div>-
+
+  <!--jQuery CDN-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
   <!--Google Maps Script-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
   <script type="text/javascript" src="googlemaps.js"></script>
+
+  <!--Foursquare Script-->
+  <script type="text/javascript" src="foursquare-api.js"></script>
+
 </body>
+
 </html>
