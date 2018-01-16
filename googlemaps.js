@@ -218,6 +218,7 @@ function googleMaps() {
           map.fitBounds(bounds);
         });
 }
+
 function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
             zoom: 16,
@@ -228,32 +229,48 @@ function initMap() {
           var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
           var icons = {
             restaurant: {
-              icon: "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"
+              icon: "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+              size: new google.maps.Size(10, 10),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(5, 5)
             },
             museum: {
-              icon: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png"
+              icon: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+              size: new google.maps.Size(10, 10),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(5, 5)
             },
             hotel: {
-              icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png"
-            }
+              icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+              size: new google.maps.Size(10, 10),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(5, 5)
+            },
             bar: {
-              icon: "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png"
+              icon: "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+              size: new google.maps.Size(10, 10),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(5, 5)
             }
           };
 
           var features = [
             {
               position: new google.maps.LatLng(-33.91721, 151.22630),
-              type: 'info'
+              type: 'bar'
             }, {
               position: new google.maps.LatLng(-33.91539, 151.22820),
-              type: 'info'
+              type: 'museum'
             }, {
               position: new google.maps.LatLng(-33.91747, 151.22912),
-              type: 'info'
+              type: 'restaurant'
             }, {
               position: new google.maps.LatLng(-33.91910, 151.22907),
-              type: 'info'
+              type: 'hotel'
             }, {
               position: new google.maps.LatLng(-33.91725, 151.23011),
               type: 'info'
