@@ -57,7 +57,22 @@
         Clubs and Bars
       </label>
     </div>
-<div class="map col-md-6"></div>
+
+<!--Weather API -->
+<div class="map col-md-6">
+  <div class="form-group">
+    <label class="col-form-label" for="inputDefault"> 7-day Forecast Location</label>
+    <input type="text" class="form-control" placeholder="City, Example: Baltimore" id="weatherCity">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Country, Example: US" id="weatherCC">
+  </div>
+  <input type="submit" name="submit" value="Submit" id="weatherSubmit">
+  <div id="weatherDisplay">
+
+  </div>
+</div>
+
 <!--Google Maps Display-->
 <div class="map col-md-6">
     <!--First Map -->
@@ -107,7 +122,8 @@
   <!--jQuery-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!--Google Maps Script-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
   <script type="text/javascript" src="googlemaps.js"></script>
+  <script type="text/javascript" src="weather.js"></script>
 </body>
 </html>
