@@ -61,14 +61,32 @@
 <!--Weather API -->
 <div class="map col-md-6">
   <div class="form-group">
-    <label class="col-form-label" for="inputDefault"> 7-day Forecast Location</label>
+    <label class="col-form-label" for="inputDefault"> 6-day Weather Forecast</label>
     <input type="text" class="form-control" placeholder="City, Example: Baltimore" id="weatherCity">
   </div>
   <div class="form-group">
     <input type="text" class="form-control" placeholder="Country, Example: US" id="weatherCC">
   </div>
   <input type="submit" name="submit" value="Submit" id="weatherSubmit">
-  <div id="weatherDisplay">
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr class="bg-primary text-white">
+          <th scope="row" id="weatherLocation"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="table-info">
+          <th scope="row"></th>
+          <td>Time of Day(HH:mm)</td>
+          <td>Temp(F)</td>
+          <td>Weather</td>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
 
   </div>
 </div>
