@@ -61,8 +61,8 @@
 <!--Weather API -->
 <div class="map col-md-6">
   <div class="form-group">
-    <label class="col-form-label" for="inputDefault"> 6-day Weather Forecast</label>
-    <input type="text" class="form-control" placeholder="City, Example: Baltimore" id="weatherCity">
+    <label class="col-form-label" for="inputDefault"> 24 hour Forecast-3 hour Intervals</label>
+    <input type="text" class="form-control" placeholder="City, Example: Washington, D.C." id="weatherCity">
   </div>
   <div class="form-group">
     <input type="text" class="form-control" placeholder="Country, Example: US" id="weatherCC">
@@ -72,19 +72,19 @@
     <table class="table table-hover">
       <thead>
         <tr class="bg-primary text-white">
-          <th scope="row" id="weatherLocation"></th>
+          <td id="weatherLocation"></td>
           <td></td>
           <td></td>
           <td></td>
         </tr>
         <tr class="table-info">
-          <th scope="row"></th>
-          <td>Time of Day(HH:mm)</td>
-          <td>Temp(F)</td>
-          <td>Weather</td>
+          <td><strong>Date & Time of Day(HH:mm)</strong></td>
+          <td><strong>Temp</strong></td>
+          <td><strong>Weather</strong></td>
+          <td></td>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="forecastDisplay">
       </tbody>
     </table>
 

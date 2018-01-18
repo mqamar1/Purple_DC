@@ -153,6 +153,7 @@ input#pac-input.controls {
 ------------------------------------------------------------------------------*/
 .table {
   margin-top: 10px;
+  background-color: white;
 }
 .table th, .table td {
   border-bottom: 0px;
