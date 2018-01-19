@@ -1,4 +1,13 @@
-h1, h2, label, p, h3 {
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+  background: url("https://wallpapercave.com/wp/aFgmc1h.png");
+  background-color: purple;
+  background-position: top;
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Josefin Slab', serif;
+}
+h1, h1.display4, h2, label, p, h3 {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -11,7 +20,8 @@ h1, h2, label, p, h3 {
     border-bottom: 3px solid black;
   }
 body{
-  background: url("http://cdn.gossrv.com/cdn/farfuture/dxdxLedZTgxCOmxyIRXZFLjWHB_7mhEsC8YypZ_QV5o/1501256217/sites/default/files/2016-12/WashingtonDCWinter.jpg");
+  background: url("https://wallpapercave.com/wp/aFgmc1h.png");
+  background-color: purple;
   background-position: top;
   background-repeat: no-repeat;
     background-attachment: fixed;
@@ -54,7 +64,12 @@ label{
 #map {
   height: 350px;
   width: 550px;
-  z-index: 10;
+  border: black solid 5px;
+}
+#map2 {
+  height: 350px;
+  width: 550px;
+  border: black solid 5px;
 }
 html,
 body {
@@ -63,7 +78,6 @@ body {
   padding: 0;
 }
 #description {
-  font-family: 'Josefin Slab', serif;
   font-size: 15px;
   font-weight: 300;
 }
@@ -84,7 +98,6 @@ body {
   outline: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   background-color: #fff;
-  font-family: 'Josefin Slab', serif;
 }
 #pac-container {
   padding-bottom: 12px;
@@ -95,19 +108,16 @@ body {
   padding: 5px 11px;
 }
 .pac-controls label {
-  font-family: 'Josefin Slab', serif;
   font-size: 13px;
   font-weight: 300;
 }
 #pac-input {
   background-color: #fff;
-  font-family: 'Josefin Slab', serif;
-  font-size: 25px;
+  font-size: 19px;
   font-weight: bold;
-  margin-left: 12px;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  margin: 10px;
+  margin: 10px 10px 10px 0px;
   width: 65%;
 }
 #pac-input:focus {
@@ -146,4 +156,24 @@ input#pac-input.controls {
 }
 /*------------------------------------------------------------------------------
 /*GOOGLE-MAPS CSS
+------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------
+/*WEATHER-API CSS
+------------------------------------------------------------------------------*/
+.table {
+  margin-top: 10px;
+  background-color: white;
+}
+.table th, .table td {
+  border-bottom: 0px;
+  border-top: 0px;
+}
+.table thead th {
+  border-bottom: 0px;
+}
+td {
+  background-color: white;
+}
+/*------------------------------------------------------------------------------
+/*WEATHER-API CSS
 ------------------------------------------------------------------------------*/
