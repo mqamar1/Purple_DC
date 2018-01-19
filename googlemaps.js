@@ -218,7 +218,9 @@ function googleMaps() {
           map.fitBounds(bounds);
         });
 }
-
+/*
+google.maps.event.addDomListener(window, 'load', googleMaps)
+*/
 function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
             zoom: 16,

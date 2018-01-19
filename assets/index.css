@@ -1,4 +1,13 @@
-h1, h2, label, p, h3 {
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+  background: url("https://wallpapercave.com/wp/aFgmc1h.png");
+  background-color: purple;
+  background-position: top;
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Josefin Slab', serif;
+}
+h1, h1.display4, h2, label, p, h3 {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -161,6 +170,9 @@ input#pac-input.controls {
 }
 .table thead th {
   border-bottom: 0px;
+}
+td {
+  background-color: white;
 }
 /*------------------------------------------------------------------------------
 /*WEATHER-API CSS
