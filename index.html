@@ -4,10 +4,12 @@
 <head>
   <link rel="stylesheet" href="assets\reset.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Purple Entertainment</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+
 
   <!-- Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -16,106 +18,197 @@
 
 </head>
 
-<body>
-  <div class="jumbotron jumbotron-fluid">
+
+
+=======
+
+<body <body data-spy="scroll" data-offset="0" data-target="#myNavbar">
+  <!-- /PAGE 1 -->
+  <div data-role="page" id="page1">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Purple Entertainment</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      </div>
+    </div>
+    <!-- /navbar -->
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#page1">D.C.'s Recommended Locations</a></li>
+        <li><a href="#page2">Weather</a></li>
+        <li><a href="#page3">Site Feedback Comments</a></li>
+      </ul>
+    </div>
+    <!-- /navbar -->
     <div class="container">
-      <h1 class="display-4">Purple Entertainment</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6"></div>
-      <div class="col-md-6">
-        <!--Places and Tourism options-->
-      </div>
-
-    </div>
-    <div class="row">
-      <div class="col-md-6"></div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="option" id="Restaurant" value="option1">
-        <label class="form-check-label" for="Restaurant">
-        Restaurant
-      </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="option" id="Monuments" value="option2">
-        <label class="form-check-label" for="Monuments">
-        Monuments
-      </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="option" id="Hotels" value="option3">
-        <label class="form-check-label" for="Hotels">
-        Hotels
-      </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="option" id="Clubs-Bars" value="option4">
-        <label class="form-check-label" for="Clubs-Bars">
-        Clubs and Bars
-      </label>
-      </div>
-
-      <div class="col-md-6"></div>
-      <!--Google Maps Display-->
-      <div class="map col-md-6">
-        <h3>Search a location & activity to display in the current extent:</h3>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Locations">
-        <div id="map"></div>
-      </div>
-    </div>
-
-    <!-- image and comments section-->
-
-    <h2>Company Information</h2>
-    <div class="row">
-      <div class="imgSection col-lg-12">
-      </div>
-    </div>
-  </div>
-
-  <!--Form Section-->
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-
-      <form id="userinput">
-        <div class="form-group">
-          <label for="nameinput">Email address</label>
-          <input type="text" class="form-control" id="nameinput" placeholder="Your Name">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="option" id="Restaurant" value="option1">
+            <label class="form-check-label" for="Restaurant">
+            Restaurant
+          </label>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="emailinput">Email address</label>
-          <input type="email" class="form-control" id="emailinput" placeholder="name@example.com">
+        <div class="col-md-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="option" id="Monuments" value="option2">
+            <label class="form-check-label" for="Monuments">
+              Monuments
+            </label>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="comments">Comments</label>
-          <textarea class="form-control" id="comments" rows="3" placeholder="Feedback"></textarea>
+        <div class="col-md-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="option" id="Hotels" value="option3">
+            <label class="form-check-label" for="Hotels">
+              Hotels
+            </label>
+          </div>
         </div>
-      </form>
-      <input class="btn btn-primary" type="submit" form="userinput">
+        <div class="col-md-3">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="option" id="Clubs-Bars" value="option4">
+            <label class="form-check-label" for="Clubs-Bars">
+              Clubs and Bars
+              </label>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-2"></div>
-  </div>
+    <!--Google Maps Display-->
+    <div class="container">
+      <div class="row">
+        <div class="map col-md-12">
+          <!--First Map -->
+          <h3>Search a location & activity to display in the current extent:</h3>
+          <input id="pac-input" class="controls" type="text" placeholder="Search Locations">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <!-- /PAGE 1 -->
+  <!-- /PAGE 2 -->
+  <div data-role="page" id="page2">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Purple Entertainment</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      </div>
+    </div>
+    <!-- /navbar -->
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#page1">D.C.'s Recommended Locations</a></li>
+        <li><a href="#page2">Weather</a></li>
+        <li><a href="#page3">Site Feedback Comments</a></li>
+      </ul>
+    </div>
+    <!-- /navbar -->
+    <!--Weather API -->
+    <div class="map col-md-6">
+      <div class="form-group">
+        <label class="col-form-label" for="inputDefault"> 24 hour Forecast-3 hour Intervals</label>
+        <input type="text" class="form-control" placeholder="City, Example: Washington, D.C." id="weatherCity">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Country, Example: US" id="weatherCC">
+      </div>
+      <input type="submit" name="submit" value="Submit" id="weatherSubmit">
+      <div>
+        <table class="table table-hover">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th id="weatherLocation"></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr class="table-info">
+              <td><strong>Date & Time of Day(HH:mm)</strong></td>
+              <td><strong>Temp</strong></td>
+              <td><strong>Weather</strong></td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody id="forecastDisplay">
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- /content -->
   </div>
+  <!-- /PAGE 2-->
+  <!-- /PAGE 3-->
+  <div data-role="page" id="page3">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Purple Entertainment</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      </div>
+    </div>
+    <!-- /navbar -->
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#page1">D.C.'s Recommended Locations</a></li>
+        <li><a href="#page2">Weather</a></li>
+        <li><a href="#page3">Site Feedback Comments</a></li>
+      </ul>
+    </div>
+    <!-- /navbar -->
+    <div class="container">
+      <!--Form Section-->
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <h2>Company Information</h2>
+          <div class="row">
+            <div class="imgSection col-lg-12">
+            </div>
+          </div>
+          <form id="userinput">
+            <div class="form-group">
+              <label for="nameinput">Email address</label>
+              <input type="text" class="form-control" id="nameinput" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <label for="emailinput">Email address</label>
+              <input type="email" class="form-control" id="emailinput" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="comments">Comments</label>
+              <textarea class="form-control" id="comments" rows="3" placeholder="Feedback"></textarea>
+            </div>
+          </form>
+          <input class="btn btn-primary text-white" type="submit" form="userinput">
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
+  <!-- /PAGE 3-->
 
-
-  </div>-
+  <!--jQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets\index.css">
+  <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!--Google Maps Script-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
+  <script type="text/javascript" src="googlemaps.js"></script>
+  <script type="text/javascript" src="weather.js"></script>
 
   <!--jQuery CDN-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-  <!--Google Maps Script-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
-  <script type="text/javascript" src="googlemaps.js"></script>
 
   <!--Foursquare Script-->
   <script type="text/javascript" src="foursquare.js"></script>
-
 </body>
 
 </html>
+
