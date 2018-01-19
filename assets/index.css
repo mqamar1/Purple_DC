@@ -128,22 +128,27 @@ input#pac-input.controls {
   animation: pulse 2s 30;
 }
 @keyframes pulse {
-  0% {
-    border: 2px white solid;
-  }
-  25% {
-    border: 2px #edbcbd solid;
-  }
-  50% {
-    border: 2px #e18f92 solid;
-  }
-  75% {
-    border: 2px #cf4c50 solid;
-  }
-  100% {
-    border: 2px #c42025 solid;
-  }
-}
+    0% {
+        border: 2px white solid;
+    }
+
+    25% {
+        border: 2px #edbcbd solid;
+    }
+
+    50% {
+        border: 2px #e18f92 solid;
+    }
+
+    75% {
+        border: 2px #cf4c50 solid;
+    }
+
+    100% {
+        border: 2px #c42025 solid;
+    }
+
+   }
 /*------------------------------------------------------------------------------
 /*GOOGLE-MAPS CSS
 ------------------------------------------------------------------------------*/
