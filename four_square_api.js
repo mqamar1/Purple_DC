@@ -2,7 +2,7 @@ var idArray = [];
 
 function testAPICall() {
 
-  var userVariable = $(".search-input").val().trim()
+  var userVariable = markerName
 
   var clientID = "0G2KKVAECBPFBYBT4SQU4MUCMF5IHQDVGCM1M4XK0EKJWQ53";
   var clientSecret = "NXG25YHZAHDRIGFZ3W2ZHPM3MZVL3CPWXPEKTP3V11WT5A5V";
@@ -96,6 +96,5 @@ function testAPICall() {
       // console.log(dataTwo)
     });
 
-  });
 
 };

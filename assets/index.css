@@ -56,7 +56,7 @@ label{
 ------------------------------------------------------------------------------*/
 #map {
   height: 500px;
-  width: 50%;
+  width: 100%;
   border: black solid 5px;
 }
 html,
@@ -141,6 +141,10 @@ input#pac-input.controls {
   100% {
     border: 2px #c42025 solid;
   }
+}
+.superHeightWidth {
+  width: 500px;
+  height: 500px;
 }
 /*------------------------------------------------------------------------------
 /*GOOGLE-MAPS CSS

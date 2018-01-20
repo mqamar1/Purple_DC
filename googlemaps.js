@@ -1,10 +1,16 @@
+
+
 var markerName = ""
+console.log("global-markerName", markerName)
 var map;
 var markers = []
 var hotMarker = []
 var restMarker = []
 var barMarker = []
 var musMarker = []
+var input = ""
+var popularity = ""
+var veryBestPic = ""
 
 function googleMaps() {
 
@@ -228,7 +234,7 @@ function googleMaps() {
     ]
   });
   // Create the search box and link it to the UI element.
-  var input = document.getElementById('pac-input');
+  input = document.getElementById('pac-input');
   var searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   // Bias the SearchBox results towards current map's viewport.
@@ -241,6 +247,8 @@ function googleMaps() {
 
   //Add Recommended Restaurants to Map
   $("#Restaurant").on("click", function() {
+    map.setZoom(13)
+
     if (this.checked === true) {
       var restaurants = [{
           position: new google.maps.LatLng(38.909773, -77.045214),
@@ -300,8 +308,15 @@ function googleMaps() {
           title: feature.title,
           map: map
         });
-
         restMarker.push(marker)
+        google.maps.event.addListener(marker, 'click', function(location) {
+          markerName = marker.title
+          console.log("location name: ", markerName)
+          console.log(location)
+          testAPICall()
+          foursquareHTML()
+
+        })
       });
     } else {
       // Clear out the old markers.
@@ -314,22 +329,24 @@ function googleMaps() {
       marker.setMap(null);
     })
     markers = [];
+
   })
   //Add Recommended Museums to Map
   $("#Museums").on("click", function() {
+    map.setZoom(13)
     if (this.checked === true) {
       var museums = [{
           position: new google.maps.LatLng(38.896909, -77.023485),
           type: 'museum',
-          title: '(International Spy Museum, 800 F St NW, Washington DC, DC 20004)'
+          title: 'International Spy Museum'
           }, {
           position: new google.maps.LatLng(38.887568, -77.019905),
           type: 'museum',
-          title: '(National Air and Space Museum, 6th and Independence Ave., SW, Washington DC, DC 20560)'
+          title: 'National Air and Space Museum'
         }, {
           position: new google.maps.LatLng(38.893138, -77.019235),
           type: 'museum',
-          title: '(Newseum, 555 Pennsylvania Ave NW, Washington DC, DC 20001)'
+          title: 'Newseum'
         }, {
           position: new google.maps.LatLng(38.891064, -77.032614),
           type: 'museum',
@@ -377,7 +394,14 @@ function googleMaps() {
 
           });
           musMarker.push(marker)
-      });
+          google.maps.event.addListener(marker, 'click', function(location) {
+            markerName = marker.title
+            console.log("location name: ", markerName)
+            console.log(location)
+            testAPICall()
+            foursquareHTML()
+          })
+        });
     } else {
       // Clear out the old markers.
       musMarker.forEach(function(marker) {
@@ -392,6 +416,7 @@ function googleMaps() {
   })
   //Add Recommended Hotels to Map
   $("#Hotels").on("click", function() {
+    map.setZoom(13)
     if (this.checked === true) {
       var hotels = [{
           position: new google.maps.LatLng(38.905920, -77.048547),
@@ -455,6 +480,13 @@ function googleMaps() {
           map: map
         });
         hotMarker.push(marker)
+        google.maps.event.addListener(marker, 'click', function(location) {
+          markerName = marker.title
+          console.log("location name: ", markerName)
+          console.log(location)
+          testAPICall()
+          foursquareHTML()
+        })
       });
     } else {
       // Clear out the old markers.
@@ -470,6 +502,7 @@ function googleMaps() {
   })
   //Add Recommended Bars to Map
   $("#Clubs-Bars").on("click", function() {
+    map.setZoom(13)
     if (this.checked === true) {
       var bars = [
         {
@@ -534,8 +567,14 @@ function googleMaps() {
           title: feature.title,
           map: map
         });
-
         barMarker.push(marker)
+        google.maps.event.addListener(marker, 'click', function(location) {
+          markerName = marker.title
+          console.log("location name: ", markerName)
+          console.log(location)
+          testAPICall()
+          foursquareHTML()
+        })
       });
     } else {
       // Clear out the old markers.
@@ -549,6 +588,22 @@ function googleMaps() {
     })
     markers = [];
   })
+
+  /*
+  google.maps.event.addListener(marker, 'click', function(location) {
+    map.setZoom(18);
+    map.setCenter(location.latLng)
+    restMarker = marker.title
+    hotMarker = marker.title
+    musMarker = marker.title
+    barMarker = marker.title
+
+    location = location.latLng
+    console.log("location name: ", markerName, restMarker, hotMarker, musMarker, barMarker )
+    console.log(location)
+
+  })
+  */
 
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
@@ -611,13 +666,12 @@ function googleMaps() {
         map.setZoom(18);
         map.setCenter(location.latLng)
         markerName = marker.title
+        testAPICall()
+        foursquareHTML()
         location = location.latLng
-        console.log(markerName)
+        console.log("location name: ", markerName)
         console.log(location)
-        /*
-        markersNameArray.push(markerName)
-        console.log(markersNameArray)
-        */
+
       })
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -629,3 +683,107 @@ function googleMaps() {
     map.fitBounds(bounds);
   });
 }
+
+
+
+//FOURSQUARE-API---------------------------------------------------------------
+var idArray = [];
+
+function testAPICall() {
+  idArray = [];
+  var userVariable = markerName
+
+  console.log("userVariable", userVariable)
+
+  var clientID = "0G2KKVAECBPFBYBT4SQU4MUCMF5IHQDVGCM1M4XK0EKJWQ53";
+  var clientSecret = "NXG25YHZAHDRIGFZ3W2ZHPM3MZVL3CPWXPEKTP3V11WT5A5V";
+  var location = "Washington+DC"
+  var date = "20180113"
+
+
+  var queryURL = "https://api.foursquare.com/v2/venues/search?near=" + location + "&query=" + userVariable + "&v=" +
+    date + "&m=foursquare" + "&client_secret=" + clientSecret + "&client_id=" + clientID;
+
+    console.log("queryURL", queryURL)
+
+  ///THIS URL WORKS
+  //https://api.foursquare.com/v2/venues/search?near=seattle,wa&query=coffee&v=20150214&m=foursquare&client_secret=NXG25YHZAHDRIGFZ3W2ZHPM3MZVL3CPWXPEKTP3V11WT5A5V&client_id=0G2KKVAECBPFBYBT4SQU4MUCMF5IHQDVGCM1M4XK0EKJWQ53
+
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).done(function(response) {
+    $(".json").text(JSON.stringify(response));
+
+    var data = response.response.venues;
+    for (var i = 0; i < data.length; i++) {
+      var picId = data[i].id;
+      idArray.push(picId)
+
+    };
+    console.log("response", response);
+
+    console.log(data);
+    console.log(picId)
+    console.log(idArray.push(picId));
+    console.log(idArray)
+
+
+
+
+
+
+    //});
+
+
+      var queryURL3 = "https://api.foursquare.com/v2/venues/" +idArray[i] + "?v=" +
+        date + "&client_secret=" + clientSecret + "&client_id=" + clientID;
+
+      $.ajax({
+      url: queryURL3,
+      method: "GET"
+    }).done(function(description) {
+      console.log(description);
+      var bestPic = description.response.venue.bestPhoto
+      console.log(bestPic);
+      //for (var i=0; i<bestPic.length; i++){
+      var prefix2 = bestPic.prefix;
+      var width2 = bestPic.width;
+      var height2 = bestPic.height;
+      var suffix2 = bestPic.suffix;
+      veryBestPic = prefix2+width2+height2+suffix2
+      console.log("veryBestPic", veryBestPic)
+//}
+
+    });
+
+    var queryURL3 = "https://api.foursquare.com/v2/venues/" +idArray[i] + "?v=" +
+      date + "&client_secret=" + clientSecret + "&client_id=" + clientID;
+    $.ajax({
+    url: queryURL3,
+    method: "GET"
+  }).done(function(checkins) {
+    console.log(checkins);
+    popularity = checkins.response.venue.stats.checkinsCount
+    console.log("checkins:",popularity);
+
+
+  });
+  //  console.log(prefix2)
+
+      // console.log(photo);
+      // console.log(dataTwo)
+
+    })
+};
+
+function foursquareHTML(){
+  $("#markerName").text(markerName)
+  $("#markerCheckins").text(popularity)
+  $("#markerImage").attr("src", veryBestPic)
+  jQuery.noConflict();
+  $("#markerModal").modal()
+}
+
+//FOURSQUARE-API---------------------------------------------------------------
