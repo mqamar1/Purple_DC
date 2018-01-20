@@ -288,6 +288,10 @@ function googleMaps() {
       })
       restMarker = [];
     }
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    })
+    markers = [];
   })
   //Add Recommended Museums to Map
   $("#Museums").on("click", function() {
@@ -358,6 +362,10 @@ function googleMaps() {
       })
       musMarker = [];
     }
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    })
+    markers = [];
   })
   //Add Recommended Hotels to Map
   $("#Hotels").on("click", function() {
@@ -432,6 +440,10 @@ function googleMaps() {
       })
       hotMarker = [];
     }
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    })
+    markers = [];
   })
   //Add Recommended Bars to Map
   $("#Clubs-Bars").on("click", function() {
@@ -508,6 +520,10 @@ function googleMaps() {
       })
       barMarker = [];
     }
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    })
+    markers = [];
   })
 
   // Listen for the event fired when the user selects a prediction and retrieve
