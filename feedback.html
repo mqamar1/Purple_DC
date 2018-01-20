@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Purple Entertainment</title>
+
+  <!-- Jquery Cdn -->
+
+  <!-- Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css">
+  <link rel="stylesheet" href="assets\index.css">
+
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Purple Entertainment</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      </div>
+    </div>
+    <!-- /navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">D.C. Recommendations <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weather.html">Weather</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feedback.html">Site Feedback</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <!--Form Section-->
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+        </br>
+          <h2>User Reviews</h2>
+          <div class="row">
+            <div class="imgSection col-lg-12">
+              <table class="table">
+          <thead>
+            <tr id="userReview">
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Comments</th>
+            </tr>
+          </thead>
+          <tbody id="userTable">
+         <!-- trows go here -->
+          </tbody>
+        </table>
+            </div>
+          </div>
+          <form class="pure-form pure-form-stacked">
+    <fieldset>
+        <label for="name">Name</label>
+        <input id="name" type="text">
+        <label for="email">Email</label>
+        <input id="emailinput" type="email">
+        <label for="comments">Comments</label>
+        <input id="comment" type="text" >
+      </br>
+        <button type="submit" class="pure-button pure-button-primary">Submit</button>
+    </fieldset>
+</form>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--Firebase-->
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <!--Boostrap & jQuery-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  <!--Google Maps Script-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
+  <script type="text/javascript" src="googlemaps.js"></script>
+  <script type="text/javascript" src="weather.js"></script>
+  <script type="text/javascript" src="firebase.js"></script>
+</body>
+
+</html>
