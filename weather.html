@@ -3,10 +3,10 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+  <meta charset="utf-8">
   <title>Purple Entertainment</title>
 
+  <!-- Jquery Cdn -->
 
   <!-- Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,7 +15,6 @@
 
 </head>
 
-
 <body>
 
     <div class="jumbotron jumbotron-fluid">
@@ -23,7 +22,6 @@
         <h1 class="display-4">Purple Entertainment</h1>
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
       </div>
-
     </div>
     <!-- /navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -34,7 +32,7 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">D.C. Recommendations</a>
+            <a class="nav-link" href="index.html">D.C. Recommendations <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="weather.html">Weather</a>
@@ -47,55 +45,44 @@
     </nav>
 
     <!-- /navbar -->
+
+    <!--Weather API -->
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" name="option" id="Restaurant" value="option1">
-            <label class="custom-control-label" for="Restaurant">
-            Restaurant
-          </label>
+        <div class="map col-md-2"></div>
+        <div class="map col-md-8">
+          <div class="form-group">
+            <label class="col-form-label" for="inputDefault"> 24 hour Forecast-3 hour Intervals</label>
+            <input type="text" class="form-control" placeholder="City, Example: Washington, D.C." id="weatherCity">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Country, Example: US" id="weatherCC">
+          </div>
+          <input type="submit" name="submit" value="Submit" id="weatherSubmit">
+          <div>
+            <table class="table table-hover">
+              <thead>
+                <tr class="bg-success text-black">
+                  <th id="weatherLocation"></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+                <tr class="table-info">
+                  <td class="blackfont"><strong>Date & Time of Day(HH:mm)</strong></td>
+                  <td class="blackfont"><strong>Temp</strong></td>
+                  <td class="blackfont"><strong>Weather</strong></td>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody id="forecastDisplay">
+              </tbody>
+            </table>
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" name="option" id="Museums" value="option2">
-            <label class="custom-control-label" for="Museums">
-              Museums
-              </label>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" name="option" id="Hotels" value="option3">
-            <label class="custom-control-label" for="Hotels">
-              Hotels
-            </label>
-          </div>
-        </div>
-        <div class="col-md-3">
-
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" name="option" id="Clubs-Bars" value="option4">
-            <label class="custom-control-label" for="Clubs-Bars">
-              Clubs and Bars
-              </label>
-          </div>
-        </div>
+        <div class="map col-md-2"></div>
       </div>
     </div>
-    <!--Google Maps Display-->
-    <div class="container">
-      <div class="row">
-        <div class="map col-md-12">
-          <!--First Map -->
-          <h3>Search a location & activity to display in the current extent:</h3>
-          <input id="pac-input" class="controls" type="text" placeholder="Search Locations">
-          <div id="map"></div>
-        </div>
-      </div>
-    </div>
-
 
   <!--Boostrap & jQuery-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -106,17 +93,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
   <script type="text/javascript" src="googlemaps.js"></script>
   <script type="text/javascript" src="weather.js"></script>
-
-  <script type="text/javascript" src="firebase.js"></script>
-
-
-  <!--jQuery CDN-->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-
-  <!--Foursquare Script-->
-  <script type="text/javascript" src="foursquare.js"></script>
 </body>
 
 </html>
-

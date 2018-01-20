@@ -1,4 +1,4 @@
-h1, h2, label, p, h3 {
+h1, h1.display4, h2, label, p, h3 {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -10,13 +10,16 @@ h1, h2, label, p, h3 {
     padding-bottom: 35px;
     border-bottom: 3px solid black;
   }
+.jumbotron {
+  margin-bottom: 0px;
+}
 body{
-  background: url("http://cdn.gossrv.com/cdn/farfuture/dxdxLedZTgxCOmxyIRXZFLjWHB_7mhEsC8YypZ_QV5o/1501256217/sites/default/files/2016-12/WashingtonDCWinter.jpg");
+  background: url("https://wallpapercave.com/wp/aFgmc1h.png");
+  background-color: purple;
   background-position: top;
   background-repeat: no-repeat;
     background-attachment: fixed;
   background-size: cover;
-  font-family: 'Josefin Slab', serif;
 }
 .col-md-3{
 
@@ -52,9 +55,9 @@ label{
 /*GOOGLE-MAPS CSS
 ------------------------------------------------------------------------------*/
 #map {
-  height: 350px;
-  width: 550px;
-  z-index: 10;
+  height: 500px;
+  width: 50%;
+  border: black solid 5px;
 }
 html,
 body {
@@ -63,25 +66,19 @@ body {
   padding: 0;
 }
 #description {
-  color: black !important;
-  font-family: 'Josefin Slab', serif;
   font-size: 15px;
   font-weight: 300;
 }
 #infowindow-content .title {
-  color: black !important;
   font-weight: bold;
 }
 #infowindow-content {
-  color: black !important;
   display: none;
 }
 #map #infowindow-content {
-  color: black !important;
   display: inline;
 }
 .pac-card {
-  color: black !important;
   margin: 10px 10px 0 0;
   border-radius: 2px 0 0 2px;
   box-sizing: border-box;
@@ -89,37 +86,29 @@ body {
   outline: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   background-color: #fff;
-  font-family: 'Josefin Slab', serif;
 }
 #pac-container {
-  color: black !important;
   padding-bottom: 12px;
   margin-right: 12px;
 }
 .pac-controls {
-  color: black !important;
   display: inline-block;
   padding: 5px 11px;
 }
 .pac-controls label {
-  color: black !important;
-  font-family: 'Josefin Slab', serif;
   font-size: 13px;
   font-weight: 300;
 }
 #pac-input {
-  color: black !important;
   background-color: #fff;
-  font-family: 'Josefin Slab', serif;
-  font-size: 15px;
-  font-weight: 300;
-  margin-left: 12px;
+  font-size: 19px;
+  font-weight: bold;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  width: 45%;
+  margin: 10px 10px 10px 0px;
+  width: 65%;
 }
 #pac-input:focus {
-  color: black !important;
   border-color: #4d90fe;
 }
 #title {
@@ -130,9 +119,52 @@ body {
   padding: 6px 12px;
 }
 #target {
-  color: black !important;
   width: 345px;
+}
+input#pac-input.controls {
+  border: 2px white solid;
+  animation: pulse 2s 30;
+}
+@keyframes pulse {
+  0% {
+    border: 2px white solid;
+  }
+  25% {
+    border: 2px #edbcbd solid;
+  }
+  50% {
+    border: 2px #e18f92 solid;
+  }
+  75% {
+    border: 2px #cf4c50 solid;
+  }
+  100% {
+    border: 2px #c42025 solid;
+  }
 }
 /*------------------------------------------------------------------------------
 /*GOOGLE-MAPS CSS
+------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------
+/*WEATHER-API CSS
+------------------------------------------------------------------------------*/
+.table {
+  margin-top: 10px;
+}
+.table th, .table td {
+  border-bottom: 0px;
+  border-top: 0px;
+}
+.table thead th {
+  border-bottom: 0px;
+}
+td {
+  background-color: black;
+  color: white;
+}
+.blackfont {
+  color: black;
+}
+/*------------------------------------------------------------------------------
+/*WEATHER-API CSS
 ------------------------------------------------------------------------------*/

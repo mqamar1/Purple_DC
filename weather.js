@@ -31,6 +31,7 @@ $("#weatherSubmit").on("click", function(){
             //Add City/Country to table
             $("#weatherLocation").text(weatherCity + ", " + weatherCC)
             //Variables created to hold data and append into table
+
             var tBody = $("#forecastDisplay")
             var tRow = $("<tr>")
             var weatherTD = $("<td>")
