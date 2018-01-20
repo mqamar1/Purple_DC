@@ -13,7 +13,7 @@ function googleMaps() {
       lat: 38.9072,
       lng: -77.0369
     },
-    zoom: 12,
+    zoom: 13,
     gestureHandling: 'greedy',
     styles: [{
         "elementType": "geometry",
@@ -266,7 +266,7 @@ function googleMaps() {
       var icon = {
         restaurant: {
           icon: "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
-          size: new google.maps.Size(10, 10),
+          size: new google.maps.Size(1, 1),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(17, 34),
           scaledSize: new google.maps.Size(5, 5)
@@ -276,6 +276,7 @@ function googleMaps() {
         var marker = new google.maps.Marker({
           position: feature.position,
           icon: icon[feature.type].icon,
+          size: icon[feature.type].size,
           title: feature.title,
           map: map
         });
