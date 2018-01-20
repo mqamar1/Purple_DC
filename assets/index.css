@@ -55,8 +55,8 @@ label{
 /*GOOGLE-MAPS CSS
 ------------------------------------------------------------------------------*/
 #map {
-  height: 350px;
-  width: 550px;
+  height: 500px;
+  width: 100%;
   border: black solid 5px;
 }
 html,
@@ -99,7 +99,7 @@ body {
   font-size: 13px;
   font-weight: 300;
 }
-#map-input {
+#pac-input {
   background-color: #fff;
   font-size: 19px;
   font-weight: bold;
@@ -108,7 +108,7 @@ body {
   margin: 10px 10px 10px 0px;
   width: 65%;
 }
-#map-input:focus {
+#pac-input:focus {
   border-color: #4d90fe;
 }
 #title {
@@ -121,7 +121,7 @@ body {
 #target {
   width: 345px;
 }
-input#map-input.controls {
+input#pac-input.controls {
   border: 2px white solid;
   animation: pulse 2s 30;
 }
@@ -160,6 +160,10 @@ input#map-input.controls {
 }
 td {
   background-color: black;
+  color: white;
+}
+.blackfont {
+  color: black;
 }
 /*------------------------------------------------------------------------------
 /*WEATHER-API CSS
