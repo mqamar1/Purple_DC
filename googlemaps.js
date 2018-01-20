@@ -7,6 +7,7 @@ var barMarker = []
 var musMarker = []
 
 function googleMaps() {
+
   //creates map in HTML centered on Washington, D.C.
   map = new google.maps.Map(document.getElementById('map'), {
     center: {
@@ -42,20 +43,25 @@ function googleMaps() {
       {
         "featureType": "administrative.land_parcel",
         "elementType": "labels",
+
         "stylers": [{
           "visibility": "off"
         }]
+
       },
       {
         "featureType": "administrative.land_parcel",
         "elementType": "labels.text.fill",
+
         "stylers": [{
           "color": "#bdbdbd"
         }]
+
       },
       {
         "featureType": "administrative.locality",
         "elementType": "labels.text.fill",
+
         "stylers": [{
           "color": "#5500aa"
         }]
@@ -63,6 +69,7 @@ function googleMaps() {
       {
         "featureType": "administrative.neighborhood",
         "elementType": "labels.text.fill",
+
         "stylers": [{
           "color": "#a74fff"
         }]
@@ -70,6 +77,7 @@ function googleMaps() {
       {
         "featureType": "landscape.man_made",
         "elementType": "geometry.stroke",
+
         "stylers": [{
           "color": "#5500aa"
         }]
@@ -83,6 +91,7 @@ function googleMaps() {
       {
         "featureType": "poi",
         "elementType": "geometry",
+
         "stylers": [{
           "color": "#eeeeee"
         }]
@@ -90,6 +99,7 @@ function googleMaps() {
       {
         "featureType": "poi",
         "elementType": "labels.text",
+
         "stylers": [{
           "visibility": "off"
         }]
@@ -97,6 +107,7 @@ function googleMaps() {
       {
         "featureType": "poi",
         "elementType": "labels.text.fill",
+
         "stylers": [{
           "color": "#757575"
         }]
@@ -104,6 +115,7 @@ function googleMaps() {
       {
         "featureType": "poi.park",
         "elementType": "geometry",
+
         "stylers": [{
           "color": "#e5e5e5"
         }]
@@ -111,6 +123,7 @@ function googleMaps() {
       {
         "featureType": "poi.park",
         "elementType": "geometry.fill",
+
         "stylers": [{
           "color": "#a6d89e"
         }]
@@ -118,6 +131,7 @@ function googleMaps() {
       {
         "featureType": "poi.park",
         "elementType": "labels.text.fill",
+
         "stylers": [{
           "color": "#9e9e9e"
         }]
@@ -173,6 +187,7 @@ function googleMaps() {
       {
         "featureType": "transit.line",
         "elementType": "geometry",
+
         "stylers": [{
           "color": "#e5e5e5"
         }]
@@ -180,13 +195,16 @@ function googleMaps() {
       {
         "featureType": "transit.station",
         "elementType": "geometry",
+
         "stylers": [{
           "color": "#eeeeee"
         }]
+
       },
       {
         "featureType": "water",
         "elementType": "geometry",
+
         "stylers": [{
           "color": "#c9c9c9"
         }]
@@ -194,6 +212,7 @@ function googleMaps() {
       {
         "featureType": "water",
         "elementType": "geometry.fill",
+
         "stylers": [{
           "color": "#b0d8ff"
         }]
@@ -201,6 +220,7 @@ function googleMaps() {
       {
         "featureType": "water",
         "elementType": "labels.text.fill",
+
         "stylers": [{
           "color": "#9e9e9e"
         }]
@@ -280,6 +300,7 @@ function googleMaps() {
           title: feature.title,
           map: map
         });
+
         restMarker.push(marker)
       });
     } else {
@@ -353,6 +374,7 @@ function googleMaps() {
               icon: icon[feature.type].icon,
               title: feature.title,
               map: map
+
           });
           musMarker.push(marker)
       });
@@ -512,6 +534,7 @@ function googleMaps() {
           title: feature.title,
           map: map
         });
+
         barMarker.push(marker)
       });
     } else {
