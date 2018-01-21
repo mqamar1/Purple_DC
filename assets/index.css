@@ -146,6 +146,15 @@ input#pac-input.controls {
   width: 500px;
   height: 500px;
 }
+.title {
+  font-weight: bold;
+}
+#infowindow-content {
+  display: none;
+}
+#map #infowindow-content {
+  display: inline;
+}
 /*------------------------------------------------------------------------------
 /*GOOGLE-MAPS CSS
 ------------------------------------------------------------------------------*/

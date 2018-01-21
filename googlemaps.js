@@ -11,6 +11,7 @@ var musMarker = []
 var input = ""
 var popularity = ""
 var veryBestPic = ""
+var placeId = ""
 
 function googleMaps() {
 
@@ -293,28 +294,33 @@ function googleMaps() {
       }];
       var icon = {
         restaurant: {
-          icon: "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
-          size: new google.maps.Size(1, 1),
+          url: "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+          size: new google.maps.Size(50, 50),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(5, 5)
+          scaledSize: new google.maps.Size(25, 25)
         }
       }
-      restaurants.forEach(function(feature) {
+      restaurants.forEach(function(place) {
+
         var marker = new google.maps.Marker({
-          position: feature.position,
-          icon: icon[feature.type].icon,
-          size: icon[feature.type].size,
-          title: feature.title,
+          position: place.position,
+          icon: icon.restaurant.url,
+          title: place.title,
           map: map
         });
         restMarker.push(marker)
         google.maps.event.addListener(marker, 'click', function(location) {
+          placeId = place.place_id
+          console.log("placeID", placeId)
+          map.setZoom(18);
+          map.setCenter(location.latLng)
           markerName = marker.title
-          console.log("location name: ", markerName)
-          console.log(location)
+          placeDetails(placeId)
+          /*
           testAPICall()
           foursquareHTML()
+          */
 
         })
       });
@@ -589,6 +595,7 @@ function googleMaps() {
     markers = [];
   })
 
+
   /*
   google.maps.event.addListener(marker, 'click', function(location) {
     map.setZoom(18);
@@ -663,14 +670,18 @@ function googleMaps() {
       console.log(markers)
       //Click event to add Marker name to array to link with FourSquare
       google.maps.event.addListener(marker, 'click', function(location) {
+        placeId = place.place_id
+        console.log("placeID", placeId)
         map.setZoom(18);
         map.setCenter(location.latLng)
         markerName = marker.title
+        placeDetails(placeId)
+        /*
         testAPICall()
         foursquareHTML()
+        */
         location = location.latLng
         console.log("location name: ", markerName)
-        console.log(location)
 
       })
       if (place.geometry.viewport) {
@@ -754,7 +765,7 @@ function testAPICall() {
       var suffix2 = bestPic.suffix;
       veryBestPic = prefix2+width2+height2+suffix2
       console.log("veryBestPic", veryBestPic)
-//}
+
 
     });
 
@@ -787,3 +798,36 @@ function foursquareHTML(){
 }
 
 //FOURSQUARE-API---------------------------------------------------------------
+
+//Google Maps Place Details//
+function placeDetails(placeId){
+
+        var infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+
+        service.getDetails({
+          placeId: placeId
+        }, function(place, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(50, 50),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+            var marker = new google.maps.Marker({
+              map: map,
+              icon: icon,
+              position: place.geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + '<br>' + '<img src="' + place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">' + '<br>' +
+                place.formatted_address + '<br>' + 'Average User Rating: '+ place.rating +'/5'+ '<br>' + 'Price Level: '+ place.price_level +'/5' + '<br>' + 'Phone Number: ' + place.international_phone_number + '<br>' + 'Official site: ' + '<a href="' + place.website + '">' + place.website + '</a>' + '<br>' + 'User Feedback: ' +  place.reviews["0"].author_name + '<br>' + 'Comments: ' + place.reviews["0"].text + '</div>');
+              infowindow.open(map, this);
+            });
+          }
+          console.log('<img src="' + place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">')
+          console.log(place.reviews)
+        });
+}
