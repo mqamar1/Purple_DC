@@ -20,7 +20,7 @@ function testAPICall() {
     url: queryURL,
     method: "GET"
   }).done(function(response) {
-    $(".json").text(JSON.stringify(response));
+    // $(".json").text(JSON.stringify(response));
     var data = response.response.venues;
     for (var i = 0; i < data.length; i++) {
       var picId = data[i].id;
@@ -40,12 +40,18 @@ function testAPICall() {
     }).done(function(photo) {
       console.log(photo);
       var dataTwo = photo.response.photos.items;
-      for (var i=0; i<dataTwo.length; i++){
+      for (var i=0; i < dataTwo.length; i++) {
         var prefix1 = dataTwo[i].prefix;
-        var width1 = dataTwo[i].width;
-        var height1 = dataTwo[i].height;
+        // var width1 = dataTwo[i].width;
+        // var height1 = dataTwo[i].height;
+        var width1 = "200";
+        var height1 = "200";
         var suffix1 = dataTwo[i].suffix;
+        var wholeIMG = prefix1 + width1 + "x" + height1 + suffix1;
         console.log(prefix1+width1+height1+suffix1)
+        console.log(wholeIMG);
+
+        $("#api-photos").append('<img src=" ' + wholeIMG + '" alt="image of venue">')
       }
 
     });
