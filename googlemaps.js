@@ -11,6 +11,8 @@ var musMarker = []
 var input = ""
 var popularity = ""
 var veryBestPic = ""
+var placeId = ""
+var placeMarker = []
 
 function googleMaps() {
 
@@ -244,7 +246,6 @@ function googleMaps() {
     markerName = ""
     markersNameArray = []
   });;
-
   //Add Recommended Restaurants to Map
   $("#Restaurant").on("click", function() {
     map.setZoom(13)
@@ -253,68 +254,85 @@ function googleMaps() {
       var restaurants = [{
           position: new google.maps.LatLng(38.909773, -77.045214),
           type: 'restaurant',
-          title: '1. (Pizzeria Paradiso, 2003 P St NW, Dupont Circle, Washington DC, DC 20036)'
+          title: 'Pizzeria Paradiso',
+          placeId: 'ChIJ6Qlpfsi3t4kR-nqXfMcBTlQ'
         }, {
           position: new google.maps.LatLng(38.900952, -77.017797),
           type: 'restaurant',
-          title: '2. (Texas de Brazil, 455 Massachusetts Ave NW, Ste 100, Washington DC, DC 20001)'
+          title: 'Texas de Brazil',
+          placeId: 'ChIJCZVfQ4y3t4kRbW8-rOCd6O8'
         }, {
           position: new google.maps.LatLng(38.901601, -77.044244),
           type: 'restaurant',
-          title: '3. (Kaz Sushi Bistro, 1915 I St NW, Washington DC, DC 20006)'
+          title: 'Kaz Sushi Bistro',
+          placeId: 'ChIJ36o9Bbq3t4kR66FGn7eZBwI'
         }, {
           position: new google.maps.LatLng(38.902141, -77.02519),
           type: 'restaurant',
-          title: '4. (Acadiana, 901 New York Ave NW, Ste 200A, Washington DC, DC 20001)'
+          title: 'Acadiana',
+          placeId: 'ChIJt4IBrJO3t4kRXcbDiwauWYE'
         }, {
           position: new google.maps.LatLng(38.899542, -77.02038),
           type: 'restaurant',
-          title: '5. (Wok & Roll, 604 H St NW, Washington DC, DC 20001)'
+          title: 'Wok & Roll',
+          placeId: 'ChIJXyx03o23t4kR4yjB3SO7mC8'
         }, {
           position: new google.maps.LatLng(38.902257, -77.00222),
           type: 'restaurant',
-          title: '6. (Indigo, 243 K St NE, Washington DC, DC 20002)'
+          title: 'Indigo',
+          placeId: 'ChIJ2TkEeSK4t4kRKfH6lYpF8m4'
         }, {
           position: new google.maps.LatLng(38.895274, -76.983337),
           type: 'restaurant',
-          title: '7. (Far East Tacos Grille, 409 15th St NE, Washington, DC 20002)'
+          title: 'Far East Tacos Grille',
+          placeId: 'ChIJBd1Ty0a4t4kRPdKhDLq52aw'
         }, {
           position: new google.maps.LatLng(38.899836, -76.98705),
           type: 'restaurant',
-          title: '8. (H Street Country Club, 1335 H St NE, Washington, DC 20002)'
+          title: 'H Street Country Club',
+          placeId: 'ChIJE5FcCUC4t4kRKkuhQvsRpmc'
         }, {
           position: new google.maps.LatLng(38.929405, -76.991024),
           type: 'restaurant',
-          title: "9. (Brookland's Finest Bar and Kitchen, 3126 12th St NE, Washington, DC 20017)"
+          title: "Brookland's Finest Bar and Kitchen",
+          placeId: 'ChIJYw5VrfPHt4kRCvZTX1soQYk'
         }, {
           position: new google.maps.LatLng(38.914631, -76.985541),
           type: 'restaurant',
-          title: '10. (Ivy City Smokehouse, 1356 Okie St NE, Washington, DC 20002)'
+          title: 'Ivy City Smokehouse, 1356 Okie St NE, Washington, DC 20002)',
+          placeId: 'ChIJCRSgFHO4t4kR-LVTtPHfsAI'
+
       }];
-      var icon = {
-        restaurant: {
-          icon: "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
-          size: new google.maps.Size(1, 1),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(5, 5)
+      console.log(restaurants)
+
+      restaurants.forEach(function(place, x) {
+        var icon = {
+            url: "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+            size: new google.maps.Size(50, 50),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
         }
-      }
-      restaurants.forEach(function(feature) {
         var marker = new google.maps.Marker({
-          position: feature.position,
-          icon: icon[feature.type].icon,
-          size: icon[feature.type].size,
-          title: feature.title,
-          map: map
+          map: map,
+          position: place.position,
+          icon: icon,
+          title: place.title,
+          placeId: restaurants[x].placeId
         });
         restMarker.push(marker)
         google.maps.event.addListener(marker, 'click', function(location) {
+          placeId = marker.placeId
+          console.log("placeID", placeId)
+          console.log(this)
+          map.setZoom(18);
+          map.setCenter(location.latLng)
           markerName = marker.title
-          console.log("location name: ", markerName)
-          console.log(location)
+          placeDetails(placeId)
+          /*
           testAPICall()
           foursquareHTML()
+          */
 
         })
       });
@@ -338,68 +356,84 @@ function googleMaps() {
       var museums = [{
           position: new google.maps.LatLng(38.896909, -77.023485),
           type: 'museum',
-          title: 'International Spy Museum'
+          title: 'International Spy Museum',
+          placeId: 'ChIJ7Y9_SpC3t4kRNidcpxFnLy0'
           }, {
           position: new google.maps.LatLng(38.887568, -77.019905),
           type: 'museum',
-          title: 'National Air and Space Museum'
+          title: 'National Air and Space Museum',
+          placeId: 'ChIJISQme4O3t4kRG-iM3TfJ5_g'
         }, {
           position: new google.maps.LatLng(38.893138, -77.019235),
           type: 'museum',
-          title: 'Newseum'
+          title: 'Newseum',
+          placeId: 'ChIJh6P0dIW3t4kRms-j-mPoCNY'
         }, {
           position: new google.maps.LatLng(38.891064, -77.032614),
           type: 'museum',
-          title: '(National Museum of African American History and Culture, 1400 Constitution Ave NW, Washington DC, DC 20560)'
+          title: 'National Museum of African American History and Culture',
+          placeId: 'ChIJF4Mpspi3t4kRBi9jWNebAZg'
         }, {
           position: new google.maps.LatLng(38.888758, -77.025939),
           type: 'museum',
-          title: '(Smithsonian Institution Building, 1000 Jefferson Dr SW, Washington DC, DC 20560)'
+          title: 'Smithsonian Institution Building',
+          placeId: 'ChIJ71-la5y3t4kRQkpvV3YxbYI'
         }, {
           position: new google.maps.LatLng(38.897668, -77.026328),
           type: 'museum',
-          title: '(Madame Tussauds DC, 1001 F St NW, Washington DC, DC 20004-1409)'
+          title: 'Madame Tussauds DC',
+          placeId: 'ChIJ16xT35C3t4kR9LWKEG9Jqi0'
         }, {
           position: new google.maps.LatLng(38.892077, -77.019912),
           type: 'museum',
-          title: '(National Gallery of Art, 6th & Constitution Ave NW, Washington, DC 20565)'
+          title: 'National Gallery of Art',
+          placeId: 'ChIJSYxSO5u3t4kRm4eyKw_Y7Kg'
         }, {
           position: new google.maps.LatLng(38.891338, -77.029941),
           type: 'museum',
-          title: '(National Museum of American History, 1300 Constitution Ave NW, Washington, DC 20560)'
+          title: 'National Museum of American History',
+          placeId: 'ChIJx7K17Ji3t4kR6h3neQYXsjI'
         }, {
           position: new google.maps.LatLng(38.905122, -77.03798),
           type: 'museum',
-          title: "(National Geographic Museum, 1145 17th St NW, Washington, DC 20036)"
+          title: "National Geographic Museum",
+          placeId: 'ChIJPQA-Fb-3t4kR-kEEP3W1kN4'
         }, {
           position: new google.maps.LatLng(38.886701, -77.032672),
           type: 'museum',
-          title: '(U.S. Holocaust Memorial Museum, 100 Raoul Wallenberg Pl SW, Washington, DC 20024)'
+          title: 'U.S. Holocaust Memorial Museum',
+          placeId: 'ChIJZaAQK6C3t4kRsx10rk51z3M'
       }];
-      var icon = {
-        museum: {
-          icon: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-          size: new google.maps.Size(10, 10),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(5, 5)
-        }
-      }
-      museums.forEach(function (feature) {
+
+      museums.forEach(function (place, x) {
+          var icon = {
+              url: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+              size: new google.maps.Size(50, 50),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+          }
           var marker = new google.maps.Marker({
-              position: feature.position,
-              icon: icon[feature.type].icon,
-              title: feature.title,
-              map: map
+              map: map,
+              position: place.position,
+              icon: icon,
+              title: place.title,
+              placeId: museums[x].placeId
 
           });
           musMarker.push(marker)
           google.maps.event.addListener(marker, 'click', function(location) {
+            placeId = marker.placeId
+            console.log("placeID", placeId)
+            console.log(this)
+            map.setZoom(18);
+            map.setCenter(location.latLng)
             markerName = marker.title
-            console.log("location name: ", markerName)
-            console.log(location)
+            placeDetails(placeId)
+            /*
             testAPICall()
             foursquareHTML()
+            */
           })
         });
     } else {
@@ -421,71 +455,83 @@ function googleMaps() {
       var hotels = [{
           position: new google.maps.LatLng(38.905920, -77.048547),
           type: 'hotel',
-          title: '(Washington Marriott Georgetown, 1221 22nd Street NW, Washington DC, DC 20037)'
+          title: 'Washington Marriott Georgetown',
+          placeId: 'ChIJNajBRLa3t4kRhkEO8UoSZZ0'
         }, {
           position: new google.maps.LatLng(38.899418, -77.055645),
           type: 'hotel',
-          title: '(The Watergate Hotel Georgetown, 2650 Virginia Ave NW, Washington DC, DC 20037)'
+          title: 'The Watergate Hotel Georgetown',
+          placeId: 'ChIJbTuat7K3t4kRUJdMXLSNdMc'
         }, {
           position: new google.maps.LatLng(38.910644, -77.042995),
           type: 'hotel',
-          title: '(The Dupont Circle, 1500 New Hampshire Ave NW, Washington DC, DC 20036)'
+          title: 'The Dupont Circle',
+          placeId: 'ChIJl-57Rsa3t4kRSyUVymKgvEU'
         }, {
           position: new google.maps.LatLng(38.900519, -77.03695),
           type: 'hotel',
-          title: '(The Hay-Adams, 16th & H Sts. NW, One Lafayette Square, Washington DC, DC 20006)'
+          title: 'The Hay-Adams',
+          placeId: 'ChIJkSF0MLy3t4kR1xSE-Mb6QRE'
         }, {
           position: new google.maps.LatLng(38.906068, -77.005074),
           type: 'hotel',
-          title: '(Hilton Garden Inn Washington DC/US Capitol, 1225 First St NE, Washington, DC 20002)'
+          title: 'Hilton Garden Inn Washington DC/US Capitol',
+          placeId: 'ChIJLZ7Q3B64t4kRcjOcbfehD-k'
         }, {
           position: new google.maps.LatLng(38.907498, -77.007796),
           type: 'hotel',
-          title: '(Hyatt Place Washington DC/US Capitol, 33 New York Ave NE, Washington, DC 20002)'
+          title: 'Hyatt Place Washington DC/US Capitol',
+          placeId: 'ChIJ2SRofR64t4kRCwnqnvpYMqk'
         }, {
           position: new google.maps.LatLng(38.911125, -76.996839),
           type: 'hotel',
-          title: '(Hampton Inn Washington DC NoMa Union Station, 501 New York Ave NE A, Washington, DC 20002)'
+          title: 'Hampton Inn Washington DC NoMa Union Station',
+          placeId: 'ChIJ5XntORC4t4kRGmih_SefOQI'
         }, {
           position: new google.maps.LatLng(38.878516, -77.023533),
           type: 'hotel',
-          title: '(Canopy by Hilton Washington DC The Wharf, 975 7th St SW, Washington, DC 20024)'
+          title: 'Canopy by Hilton Washington DC The Wharf',
+          placeId: 'ChIJ7_FByHC3t4kRMtEWb5krqqw'
         },
         {
           position: new google.maps.LatLng(38.916355, -77.0469),
           type: 'hotel',
-          title: '(Churchill Hotel, 1914 Connecticut Ave NW, Washington, DC 20009)'
+          title: 'Churchill Hotel',
+          placeId: 'ChIJjSCWuM-3t4kRjc3OKUoZ2js'
         },
         {
           position: new google.maps.LatLng(38.876652, -77.007101),
           type: 'hotel',
-          title: '(Homewood Suites By Hilton Washington DC Capitol-Navy Yard, 50 M St SE, Washington, DC 20003)'
+          title: 'Homewood Suites By Hilton Washington DC Capitol-Navy Yard',
+          placeId: 'ChIJu1khkNa5t4kR2E5wUPunvLU'
         }
 
       ];
-      var icon = {
-        hotel: {
-          icon: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-          size: new google.maps.Size(10, 10),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(5, 5)
+
+      hotels.forEach(function(place, x) {
+        var icon = {
+            url: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+            size: new google.maps.Size(50, 50),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
         }
-      }
-      hotels.forEach(function(feature) {
         var marker = new google.maps.Marker({
-          position: feature.position,
-          icon: icon[feature.type].icon,
-          title: feature.title,
-          map: map
+          map: map,
+          position: place.position,
+          icon: icon,
+          title: place.title,
+          placeId: hotels[x].placeId
         });
         hotMarker.push(marker)
         google.maps.event.addListener(marker, 'click', function(location) {
+          placeId = marker.placeId
+          console.log("placeID", placeId)
+          console.log(this)
+          map.setZoom(18);
+          map.setCenter(location.latLng)
           markerName = marker.title
-          console.log("location name: ", markerName)
-          console.log(location)
-          testAPICall()
-          foursquareHTML()
+          placeDetails(placeId)
         })
       });
     } else {
@@ -506,74 +552,86 @@ function googleMaps() {
     if (this.checked === true) {
       var bars = [
         {
-            position: new google.maps.LatLng(38.896455, -77.023434),
+          position: new google.maps.LatLng(38.896455, -77.023434),
           type: 'bar',
-          title: '(Penn Social, 801 E St NW, Washington, DC 20004)'
+          title: 'Penn Social',
+          placeId: 'ChIJPU9VOZC3t4kR3MoQpD-q830'
         }, {
-            position: new google.maps.LatLng(38.899006, -77.022273),
-            type: 'bar',
-          title: '(Rocket Bar, 714 7th St NW, Washington, DC 20001)'
+          position: new google.maps.LatLng(38.899006, -77.022273),
+          type: 'bar',
+          title: 'Rocket Bar',
+          placeId: 'ChIJwd4e_ZG3t4kRZyhiqUfIXQM'
         }, {
-            position: new google.maps.LatLng(38.905326, -77.065664),
-            type: 'bar',
-          title:'(Georgetown Piano Bar, 3287 M St NW, Washington, DC 20007)'
+          position: new google.maps.LatLng(38.905326, -77.065664),
+          type: 'bar',
+          title:'Georgetown Piano Bar',
+          placeId: 'ChIJAwHJ2Ui2t4kRWnehalqGX0k'
         }, {
-            position: new google.maps.LatLng(38.904078, -77.037995),
-            type: 'bar',
-          title: '(Barcode, 1101 17th St NW, Washington, DC 20036)'
+          position: new google.maps.LatLng(38.904078, -77.037995),
+          type: 'bar',
+          title: 'Barcode',
+          placeId: 'ChIJtZtGJ7-3t4kR4_v7WdDfvFQ'
         }, {
-            position: new google.maps.LatLng(38.917642, -77.031593),
-            type: 'bar',
-          title: '(Quarter+Glory, 2017 14th St NW, Washington, DC 20009)'
+          position: new google.maps.LatLng(38.917642, -77.031593),
+          type: 'bar',
+          title: 'Quarter Glory',
+          placeId: 'ChIJNzeivue3t4kR3j-ZPLZzqXg'
         }, {
-            position: new google.maps.LatLng(38.916731, -77.037183),
-            type: 'bar',
-          title: '(Local 16, 1602 U St NW, Washington, DC 20009)'
+          position: new google.maps.LatLng(38.916731, -77.037183),
+          type: 'bar',
+          title: 'Local 16',
+          placeId: 'ChIJAb66zdy3t4kRmADgbA-AMQo'
         }, {
-            position: new google.maps.LatLng(38.909830, -77.048592),
-            type: 'bar',
-            title: '(The Fireplace, 2161 P St NW, Washington, DC 20037)'
+          position: new google.maps.LatLng(38.909830, -77.048592),
+          type: 'bar',
+          title: 'The Fireplace',
+          placeId: 'ChIJ4Yh3pcm3t4kRLSFiblnrwvY'
         }, {
-            position: new google.maps.LatLng(38.897577, -77.024745),
-            type: 'bar',
-            title: '(Ultrabar, 911 F St NW, Washington, DC 20004)'
+          position: new google.maps.LatLng(38.897577, -77.024745),
+          type: 'bar',
+          title: 'Ultrabar',
+          placeId: 'ChIJLd5HqpG3t4kR7SE4iLL4rKk'
         }, {
-            position: new google.maps.LatLng(38.904645, -77.062472),
-            type: 'bar',
-          title: '(Blues Alley, 1073 Wisconsin Ave NW, Washington, DC 20007)'
+          position: new google.maps.LatLng(38.904645, -77.062472),
+          type: 'bar',
+          title: 'Blues Alley',
+          placeId: 'ChIJ6bJ4V0m2t4kRFm0ia824sLg'
         }, {
-            position: new google.maps.LatLng(38.922091, -77.042144),
-            type: 'bar',
-          title: '(Bossa Bistro & Lounge, 2463 18 St NW, Washington, DC 20009)'
+          position: new google.maps.LatLng(38.922091, -77.042144),
+          type: 'bar',
+          title: 'Bossa Bistro & Lounge',
+          placeId: 'ChIJs_CFK9q3t4kRj-NN5ekQYUE'
         }, {
-            position: new google.maps.LatLng(38.920389, -77.041619),
-            type: 'bar',
-            title: '(Columbia Station Inc, 2325 18 St NW, Washington, DC 20009)'
+          position: new google.maps.LatLng(38.920389, -77.041619),
+          type: 'bar',
+          title: 'Columbia Station Inc',
+          placeId: 'ChIJO-z9rdu3t4kRJjR2EBpY2Fc'
         }
       ]
       var icon = {
-        bar: {
-          icon: "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
-          size: new google.maps.Size(10, 10),
+          url: "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+          size: new google.maps.Size(50, 50),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(5, 5)
-        }
+          scaledSize: new google.maps.Size(25, 25)
       }
-      bars.forEach(function(feature) {
+      bars.forEach(function(place, x) {
         var marker = new google.maps.Marker({
-          position: feature.position,
-          icon: icon[feature.type].icon,
-          title: feature.title,
-          map: map
+          map: map,
+          position: place.position,
+          icon: icon,
+          title: place.title,
+          placeId: bars[x].placeId
         });
         barMarker.push(marker)
         google.maps.event.addListener(marker, 'click', function(location) {
+          placeId = marker.placeId
+          console.log("placeID", placeId)
+          console.log(this)
+          map.setZoom(18);
+          map.setCenter(location.latLng)
           markerName = marker.title
-          console.log("location name: ", markerName)
-          console.log(location)
-          testAPICall()
-          foursquareHTML()
+          placeDetails(placeId)
         })
       });
     } else {
@@ -589,21 +647,6 @@ function googleMaps() {
     markers = [];
   })
 
-  /*
-  google.maps.event.addListener(marker, 'click', function(location) {
-    map.setZoom(18);
-    map.setCenter(location.latLng)
-    restMarker = marker.title
-    hotMarker = marker.title
-    musMarker = marker.title
-    barMarker = marker.title
-
-    location = location.latLng
-    console.log("location name: ", markerName, restMarker, hotMarker, musMarker, barMarker )
-    console.log(location)
-
-  })
-  */
 
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
@@ -663,14 +706,18 @@ function googleMaps() {
       console.log(markers)
       //Click event to add Marker name to array to link with FourSquare
       google.maps.event.addListener(marker, 'click', function(location) {
+        placeId = place.place_id
+        console.log("placeID", placeId)
         map.setZoom(18);
         map.setCenter(location.latLng)
         markerName = marker.title
+        placeDetails(placeId)
+        /*
         testAPICall()
         foursquareHTML()
+        */
         location = location.latLng
         console.log("location name: ", markerName)
-        console.log(location)
 
       })
       if (place.geometry.viewport) {
@@ -754,7 +801,7 @@ function testAPICall() {
       var suffix2 = bestPic.suffix;
       veryBestPic = prefix2+width2+height2+suffix2
       console.log("veryBestPic", veryBestPic)
-//}
+
 
     });
 
@@ -779,11 +826,57 @@ function testAPICall() {
 };
 
 function foursquareHTML(){
-  $("#markerName").text(markerName)
-  $("#markerCheckins").text(popularity)
-  $("#markerImage").attr("src", veryBestPic)
+  $("#markerCheckins").append(placeDetailsModal)
   jQuery.noConflict();
   $("#markerModal").modal()
 }
 
 //FOURSQUARE-API---------------------------------------------------------------
+
+//Google Maps Place Details//
+function placeDetails(placeId){
+        $("#markerName").empty()
+        $("#markerCheckins").empty()
+        // Clear out the old markers.
+        placeMarker.forEach(function(marker) {
+          marker.setMap(null);
+        })
+
+        var infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+
+        service.getDetails({
+          placeId: placeId
+        }, function(place, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(50, 50),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+            marker = new google.maps.Marker({
+              map: map,
+              icon: icon,
+              position: place.geometry.location
+            });
+
+            placeMarker.push(marker)
+
+            google.maps.event.addListener(marker, 'click', function() {
+              var placeDetailsTitle = (place.name)
+              var placeDetailsModal = ('<div><img src="' +  place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">' + '<br>' +
+                place.formatted_address + '<br>' + 'Average User Rating: '+ place.rating +'/5'+ '<br>' + 'Price Level: '+ place.price_level +'/5' + '<br>' + 'Phone Number: ' + place.international_phone_number + '<br>' + 'Official site: ' + '<a href="' + place.website + '">' + place.website + '</a>' + '<br>' + 'User Feedback: ' +  place.reviews["0"].author_name + '<br>' + 'Comments: ' + place.reviews["0"].text + '</div>');
+
+                $("#markerName").text(placeDetailsTitle)
+                $("#markerCheckins").append(placeDetailsModal)
+                jQuery.noConflict();
+                $("#markerModal").modal()
+            });
+          }
+          /*console.log('<img src="' + place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">')*/
+          console.log(place.reviews)
+        });
+}
