@@ -24,14 +24,14 @@
 <body>
 
   <div class="jumbotron jumbotron-fluid">
-    <div class="container">
+    <div class="container my-container">
       <h1 class="display-4">Purple Entertainment</h1>
       <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
     </div>
 
   </div>
   <!-- /navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark my-nav">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@
   </nav>
 
   <!-- /navbar -->
-  <div class="container">
+  <div class="container my-category-container">
     <div class="row">
       <div class="col-md-3">
         <div class="custom-control custom-checkbox">
@@ -92,16 +92,15 @@
   <!--Google Maps Display-->
   <div class="container">
     <div class="row">
-      <div class="map col-md-12">
+      <div class="map col-md-12 my-styles">
         <!--First Map -->
         <h3>Search a location & activity to display in the current extent:</h3>
         <input id="pac-input" class="controls" type="text" placeholder="Search Locations">
         <div id="map"></div>
         <div id="infowindow-content">
-            <span id="place-name"  class="title"></span><br>
-            Place ID <span id="place-id"></span><br>
-            <span id="place-address"></span>
-      </div>
+          <span id="place-name" class="title"></span><br> Place ID <span id="place-id"></span><br>
+          <span id="place-address"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -121,14 +120,15 @@
               <div class="col-md-12">
                 <p class="modalfont" id="markerCheckins"></p>
               </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  <footer class="my-footer">
+    <p>Purple Entertainment</p>
+  </footer>
 
 
 

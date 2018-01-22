@@ -1,6 +1,6 @@
 h1, h1.display4, h2, label, p,  h3 {
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
   .jumbotron-fluid{
     color: purple;
@@ -8,11 +8,60 @@ h1, h1.display4, h2, label, p,  h3 {
     background-position: center;
     background-size: cover;
     padding-bottom: 35px;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
   }
+
 .jumbotron {
   margin-bottom: 0px;
 }
+
+
+/************ TR STYLES ***********/
+.my-container {
+  background-color: lavender;
+  border-radius: 5px;
+  color: #630f9b;
+  border: none;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.my-container h1 {
+  font-weight: 1000;
+  color: #630f9b;
+}
+
+.my-container p {
+  color: #630f9b;
+}
+
+.my-nav {
+  background-color: #630f9b;
+  border-bottom: 3px solid white;
+}
+
+.my-category-container {
+  margin-top: 1.5em;
+}
+
+.my-styles {
+  background-color: white;
+  padding-bottom: 3em;
+  padding-top: 1em;
+}
+
+.my-footer {
+  width: 100%;
+  background-color: #630f9b;
+  padding-bottom: .75em;
+  padding-top: 1em;
+  margin-top: 3em;
+  border-top: 3px solid white;
+  text-align: center;
+}
+
+/*******END TR STYLES********/
+
 body{
   background: url("https://wallpapercave.com/wp/aFgmc1h.png");
   background-color: purple;
@@ -57,7 +106,7 @@ label{
 #map {
   height: 500px;
   width: 100%;
-  border: black solid 5px;
+  border: #630f9b solid 3px;
 }
 html,
 body {
