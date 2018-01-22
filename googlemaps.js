@@ -532,10 +532,6 @@ function googleMaps() {
           map.setCenter(location.latLng)
           markerName = marker.title
           placeDetails(placeId)
-          /*
-          testAPICall()
-          foursquareHTML()
-          */
         })
       });
     } else {
@@ -556,74 +552,86 @@ function googleMaps() {
     if (this.checked === true) {
       var bars = [
         {
-            position: new google.maps.LatLng(38.896455, -77.023434),
+          position: new google.maps.LatLng(38.896455, -77.023434),
           type: 'bar',
-          title: '(Penn Social, 801 E St NW, Washington, DC 20004)'
+          title: 'Penn Social',
+          placeId: 'ChIJPU9VOZC3t4kR3MoQpD-q830'
         }, {
-            position: new google.maps.LatLng(38.899006, -77.022273),
-            type: 'bar',
-          title: '(Rocket Bar, 714 7th St NW, Washington, DC 20001)'
+          position: new google.maps.LatLng(38.899006, -77.022273),
+          type: 'bar',
+          title: 'Rocket Bar',
+          placeId: 'ChIJwd4e_ZG3t4kRZyhiqUfIXQM'
         }, {
-            position: new google.maps.LatLng(38.905326, -77.065664),
-            type: 'bar',
-          title:'(Georgetown Piano Bar, 3287 M St NW, Washington, DC 20007)'
+          position: new google.maps.LatLng(38.905326, -77.065664),
+          type: 'bar',
+          title:'Georgetown Piano Bar',
+          placeId: 'ChIJAwHJ2Ui2t4kRWnehalqGX0k'
         }, {
-            position: new google.maps.LatLng(38.904078, -77.037995),
-            type: 'bar',
-          title: '(Barcode, 1101 17th St NW, Washington, DC 20036)'
+          position: new google.maps.LatLng(38.904078, -77.037995),
+          type: 'bar',
+          title: 'Barcode',
+          placeId: 'ChIJtZtGJ7-3t4kR4_v7WdDfvFQ'
         }, {
-            position: new google.maps.LatLng(38.917642, -77.031593),
-            type: 'bar',
-          title: '(Quarter+Glory, 2017 14th St NW, Washington, DC 20009)'
+          position: new google.maps.LatLng(38.917642, -77.031593),
+          type: 'bar',
+          title: 'Quarter Glory',
+          placeId: 'ChIJNzeivue3t4kR3j-ZPLZzqXg'
         }, {
-            position: new google.maps.LatLng(38.916731, -77.037183),
-            type: 'bar',
-          title: '(Local 16, 1602 U St NW, Washington, DC 20009)'
+          position: new google.maps.LatLng(38.916731, -77.037183),
+          type: 'bar',
+          title: 'Local 16',
+          placeId: 'ChIJAb66zdy3t4kRmADgbA-AMQo'
         }, {
-            position: new google.maps.LatLng(38.909830, -77.048592),
-            type: 'bar',
-            title: '(The Fireplace, 2161 P St NW, Washington, DC 20037)'
+          position: new google.maps.LatLng(38.909830, -77.048592),
+          type: 'bar',
+          title: 'The Fireplace',
+          placeId: 'ChIJ4Yh3pcm3t4kRLSFiblnrwvY'
         }, {
-            position: new google.maps.LatLng(38.897577, -77.024745),
-            type: 'bar',
-            title: '(Ultrabar, 911 F St NW, Washington, DC 20004)'
+          position: new google.maps.LatLng(38.897577, -77.024745),
+          type: 'bar',
+          title: 'Ultrabar',
+          placeId: 'ChIJLd5HqpG3t4kR7SE4iLL4rKk'
         }, {
-            position: new google.maps.LatLng(38.904645, -77.062472),
-            type: 'bar',
-          title: '(Blues Alley, 1073 Wisconsin Ave NW, Washington, DC 20007)'
+          position: new google.maps.LatLng(38.904645, -77.062472),
+          type: 'bar',
+          title: 'Blues Alley',
+          placeId: 'ChIJ6bJ4V0m2t4kRFm0ia824sLg'
         }, {
-            position: new google.maps.LatLng(38.922091, -77.042144),
-            type: 'bar',
-          title: '(Bossa Bistro & Lounge, 2463 18 St NW, Washington, DC 20009)'
+          position: new google.maps.LatLng(38.922091, -77.042144),
+          type: 'bar',
+          title: 'Bossa Bistro & Lounge',
+          placeId: 'ChIJs_CFK9q3t4kRj-NN5ekQYUE'
         }, {
-            position: new google.maps.LatLng(38.920389, -77.041619),
-            type: 'bar',
-            title: '(Columbia Station Inc, 2325 18 St NW, Washington, DC 20009)'
+          position: new google.maps.LatLng(38.920389, -77.041619),
+          type: 'bar',
+          title: 'Columbia Station Inc',
+          placeId: 'ChIJO-z9rdu3t4kRJjR2EBpY2Fc'
         }
       ]
       var icon = {
-        bar: {
-          icon: "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
-          size: new google.maps.Size(10, 10),
+          url: "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+          size: new google.maps.Size(50, 50),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(5, 5)
-        }
+          scaledSize: new google.maps.Size(25, 25)
       }
-      bars.forEach(function(feature) {
+      bars.forEach(function(place, x) {
         var marker = new google.maps.Marker({
-          position: feature.position,
-          icon: icon[feature.type].icon,
-          title: feature.title,
-          map: map
+          map: map,
+          position: place.position,
+          icon: icon,
+          title: place.title,
+          placeId: bars[x].placeId
         });
         barMarker.push(marker)
         google.maps.event.addListener(marker, 'click', function(location) {
+          placeId = marker.placeId
+          console.log("placeID", placeId)
+          console.log(this)
+          map.setZoom(18);
+          map.setCenter(location.latLng)
           markerName = marker.title
-          console.log("location name: ", markerName)
-          console.log(location)
-          testAPICall()
-          foursquareHTML()
+          placeDetails(placeId)
         })
       });
     } else {
@@ -639,23 +647,6 @@ function googleMaps() {
     markers = [];
   })
 
-
-
-  /*
-  google.maps.event.addListener(marker, 'click', function(location) {
-    map.setZoom(18);
-    map.setCenter(location.latLng)
-    restMarker = marker.title
-    hotMarker = marker.title
-    musMarker = marker.title
-    barMarker = marker.title
-
-    location = location.latLng
-    console.log("location name: ", markerName, restMarker, hotMarker, musMarker, barMarker )
-    console.log(location)
-
-  })
-  */
 
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
@@ -835,9 +826,7 @@ function testAPICall() {
 };
 
 function foursquareHTML(){
-  $("#markerName").text(markerName)
-  $("#markerCheckins").text(popularity)
-  $("#markerImage").attr("src", veryBestPic)
+  $("#markerCheckins").append(placeDetailsModal)
   jQuery.noConflict();
   $("#markerModal").modal()
 }
@@ -846,6 +835,8 @@ function foursquareHTML(){
 
 //Google Maps Place Details//
 function placeDetails(placeId){
+        $("#markerName").empty()
+        $("#markerCheckins").empty()
         // Clear out the old markers.
         placeMarker.forEach(function(marker) {
           marker.setMap(null);
@@ -875,9 +866,14 @@ function placeDetails(placeId){
             placeMarker.push(marker)
 
             google.maps.event.addListener(marker, 'click', function() {
-              infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + '<br>' + '<img src="' +  place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">' + '<br>' +
+              var placeDetailsTitle = (place.name)
+              var placeDetailsModal = ('<div><img src="' +  place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">' + '<br>' +
                 place.formatted_address + '<br>' + 'Average User Rating: '+ place.rating +'/5'+ '<br>' + 'Price Level: '+ place.price_level +'/5' + '<br>' + 'Phone Number: ' + place.international_phone_number + '<br>' + 'Official site: ' + '<a href="' + place.website + '">' + place.website + '</a>' + '<br>' + 'User Feedback: ' +  place.reviews["0"].author_name + '<br>' + 'Comments: ' + place.reviews["0"].text + '</div>');
-              infowindow.open(map, this);
+
+                $("#markerName").text(placeDetailsTitle)
+                $("#markerCheckins").append(placeDetailsModal)
+                jQuery.noConflict();
+                $("#markerModal").modal()
             });
           }
           /*console.log('<img src="' + place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">')*/

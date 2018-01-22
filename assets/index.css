@@ -1,4 +1,4 @@
-h1, h1.display4, h2, label, p, h3 {
+h1, h1.display4, h2, label, p,  h3 {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -154,6 +154,10 @@ input#pac-input.controls {
 }
 #map #infowindow-content {
   display: inline;
+}
+.modalfont {
+  color: black;
+  text-shadow: none;
 }
 /*------------------------------------------------------------------------------
 /*GOOGLE-MAPS CSS
