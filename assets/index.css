@@ -60,7 +60,7 @@ h1 {
 .my-nav {
   background-color: #630f9b;
   border-bottom: 3px solid white;
-  padding-left: 12em;
+  padding-left: 19em;
 }
 
 .my-nav-link {
@@ -296,3 +296,26 @@ td {
 /*------------------------------------------------------------------------------
 /*WEATHER-API CSS
 ------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 980px) {
+  .my-nav {
+    background-color: #630f9b;
+    border-bottom: 3px solid white;
+    padding-left: 0em;
+  }
+  .my-nav-link {
+    padding-right: 0em;
+    text-align: center;
+    font-size: 2em;
+  }
+  .my-container {
+    background-color: none;
+    border-radius: 5px;
+    color: none;
+    border: none;
+    text-align: center;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    opacity: 0.6;
+  }
+}
