@@ -1,18 +1,127 @@
 h1, h1.display4, h2, label, p,  h3 {
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-  .jumbotron-fluid{
+
+/******* Fonts ********/
+body, p {
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Lora', serif;
+}
+
+h3 {
+  /* font-family: 'Sansita', sans-serif; */
+  font-family: 'Lora', serif;
+  font-weight: bold;
+}
+
+h1 {
+  /* font-family: 'PT Serif', serif; */
+  font-family: 'Alef', sans-serif;
+}
+
+
+
+
+.jumbotron-fluid {
     color: purple;
     background: url("https://static1.squarespace.com/static/555d1c13e4b04fe4b79cf7c0/55a58398e4b0d46084e01c89/55a58406e4b0ffc7052b0ccd/1436910603011/DC+Monument+Shoot_Washington+Monument-Pano-Edit.jpg?format=2500w");
     background-position: center;
     background-size: cover;
     padding-bottom: 35px;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
   }
+
 .jumbotron {
   margin-bottom: 0px;
 }
+
+
+/************ TR STYLES ***********/
+.my-container {
+  background-color: lavender;
+  border-radius: 5px;
+  color: #630f9b;
+  border: none;
+  text-align: center;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  opacity: 0.9;
+}
+
+.my-container h1 {
+  font-weight: 1000;
+  color: #630f9b;
+}
+
+.my-container p {
+  color: #630f9b;
+}
+
+.my-nav {
+  background-color: #630f9b;
+  border-bottom: 3px solid white;
+  padding-left: 12em;
+}
+
+.my-nav-link {
+  padding-right: 5em;
+  text-align: center;
+  font-size: 2em;
+}
+
+.my-category-container {
+  margin-top: 1.5em;
+}
+
+.my-map-text {
+  color: #630f9b;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+
+.my-styles {
+  background-color: white;
+  padding-bottom: 3em;
+  padding-top: 1em;
+  margin-top: 2em;
+  border-radius: 5px;
+}
+
+.my-btn-sm {
+  padding: 0.25rem 1.5rem;
+}
+
+.my-footer {
+  width: 100%;
+  background-color: #630f9b;
+  padding-bottom: .75em;
+  padding-top: 1em;
+  margin-top: 3em;
+  border-top: 3px solid white;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+.dropdown-styles {
+  padding-left: 1em;
+  margin-left: 10em;
+  font-size: 20px;
+}
+
+.dropdown-styles a {
+  font-weight: 800;
+  color: #630f9b;
+}
+
+.grow:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/*******END TR STYLES********/
+
 body{
   background: url("https://wallpapercave.com/wp/aFgmc1h.png");
   background-color: purple;
@@ -50,6 +159,8 @@ label{
 
 .lead{
   font-size: 30px;
+  font-size: 19px;
+  font-style: italic;
 }
 /*------------------------------------------------------------------------------
 /*GOOGLE-MAPS CSS
@@ -57,7 +168,7 @@ label{
 #map {
   height: 500px;
   width: 100%;
-  border: black solid 5px;
+  border: #630f9b solid 3px;
 }
 html,
 body {
