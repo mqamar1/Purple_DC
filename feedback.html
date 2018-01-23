@@ -6,86 +6,105 @@
   <meta charset="utf-8">
   <title>Purple Entertainment</title>
 
-  <!-- Jquery Cdn -->
-
   <!-- Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css">
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets\index.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Alef" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Purple Entertainment</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-      </div>
-    </div>
-    <!-- /navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">D.C. Recommendations <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="weather.html">Weather</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="feedback.html">Site Feedback</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="container">
-      <!--Form Section-->
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-        </br>
-          <h2>User Reviews</h2>
-          <div class="row">
-            <div class="imgSection col-lg-12">
-              <table class="table">
-          <thead>
-            <tr id="userReview">
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Comments</th>
-            </tr>
-          </thead>
-          <tbody id="userTable">
-         <!-- trows go here -->
-          </tbody>
-        </table>
-            </div>
-          </div>
-          <form class="pure-form pure-form-stacked">
-    <fieldset>
-        <label for="name">Name</label>
-        <input id="name" type="text">
-        <label for="email">Email</label>
-        <input id="emailinput" type="email">
-        <label for="comments">Comments</label>
-        <input id="comment" type="text" >
-      </br>
-        <button type="submit" class="pure-button pure-button-primary">Submit</button>
-    </fieldset>
-</form>
-        </div>
-        <div class="col-md-2"></div>
-      </div>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container my-container">
+      <h1 class="display-4">Purple Entertainment</h1>
+      <p class="lead">An app to guide you on your journey through all places & sizes!</p>
     </div>
   </div>
 
+  <!-- /navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark my-nav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+
+
+        <li class="nav-item active my-nav-link">
+          <h3><a class="nav-link grow" href="index.html"> D.C. Recommendations</a></h3>
+        </li>
+
+        <li class="nav-item my-nav-link">
+          <h3><a class="nav-link grow" href="weather.html"></span> Weather</a></h3>
+        </li>
+        <li class="nav-item my-nav-link">
+          <h3><a class="nav-link grow" href="feedback.html"> Site Feedback</a></h3>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /navbar -->
+
+  <!--Form Section-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 my-styles">
+        </br>
+        <h3 class="my-map-text">User Reviews</h3>
+        <div class="row">
+          <div class="imgSection col-lg-12">
+            <table class="table">
+              <thead>
+                <tr id="userReview">
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Comments</th>
+                </tr>
+              </thead>
+              <tbody id="userTable">
+                <!-- trows go here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <form class="pure-form pure-form-stacked">
+          <fieldset>
+            <label for="name">Name</label>
+            <input id="name" type="text">
+            <label for="email">Email</label>
+            <input id="emailinput" type="email">
+            <label for="comments">Comments</label>
+            <input id="comment" type="text">
+            </br>
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+  <!-- </div> -->
+  <footer class="my-footer">
+    <p>Purple Entertainment 2017 ©</p>
+  </footer>
+
   <!--Firebase-->
-<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
   <!--Boostrap & jQuery-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
