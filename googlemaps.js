@@ -1,5 +1,3 @@
-
-
 var markerName = ""
 console.log("global-markerName", markerName)
 var map;
@@ -252,66 +250,66 @@ function googleMaps() {
 
     if (this.checked === true) {
       var restaurants = [{
-          position: new google.maps.LatLng(38.909773, -77.045214),
-          type: 'restaurant',
-          title: 'Pizzeria Paradiso',
-          placeId: 'ChIJ6Qlpfsi3t4kR-nqXfMcBTlQ'
-        }, {
-          position: new google.maps.LatLng(38.900952, -77.017797),
-          type: 'restaurant',
-          title: 'Texas de Brazil',
-          placeId: 'ChIJCZVfQ4y3t4kRbW8-rOCd6O8'
-        }, {
-          position: new google.maps.LatLng(38.901601, -77.044244),
-          type: 'restaurant',
-          title: 'Kaz Sushi Bistro',
-          placeId: 'ChIJ36o9Bbq3t4kR66FGn7eZBwI'
-        }, {
-          position: new google.maps.LatLng(38.902141, -77.02519),
-          type: 'restaurant',
-          title: 'Acadiana',
-          placeId: 'ChIJt4IBrJO3t4kRXcbDiwauWYE'
-        }, {
-          position: new google.maps.LatLng(38.899542, -77.02038),
-          type: 'restaurant',
-          title: 'Wok & Roll',
-          placeId: 'ChIJXyx03o23t4kR4yjB3SO7mC8'
-        }, {
-          position: new google.maps.LatLng(38.902257, -77.00222),
-          type: 'restaurant',
-          title: 'Indigo',
-          placeId: 'ChIJ2TkEeSK4t4kRKfH6lYpF8m4'
-        }, {
-          position: new google.maps.LatLng(38.895274, -76.983337),
-          type: 'restaurant',
-          title: 'Far East Tacos Grille',
-          placeId: 'ChIJBd1Ty0a4t4kRPdKhDLq52aw'
-        }, {
-          position: new google.maps.LatLng(38.899836, -76.98705),
-          type: 'restaurant',
-          title: 'H Street Country Club',
-          placeId: 'ChIJE5FcCUC4t4kRKkuhQvsRpmc'
-        }, {
-          position: new google.maps.LatLng(38.929405, -76.991024),
-          type: 'restaurant',
-          title: "Brookland's Finest Bar and Kitchen",
-          placeId: 'ChIJYw5VrfPHt4kRCvZTX1soQYk'
-        }, {
-          position: new google.maps.LatLng(38.914631, -76.985541),
-          type: 'restaurant',
-          title: 'Ivy City Smokehouse, 1356 Okie St NE, Washington, DC 20002)',
-          placeId: 'ChIJCRSgFHO4t4kR-LVTtPHfsAI'
+        position: new google.maps.LatLng(38.909773, -77.045214),
+        type: 'restaurant',
+        title: 'Pizzeria Paradiso',
+        placeId: 'ChIJ6Qlpfsi3t4kR-nqXfMcBTlQ'
+      }, {
+        position: new google.maps.LatLng(38.900952, -77.017797),
+        type: 'restaurant',
+        title: 'Texas de Brazil',
+        placeId: 'ChIJCZVfQ4y3t4kRbW8-rOCd6O8'
+      }, {
+        position: new google.maps.LatLng(38.901601, -77.044244),
+        type: 'restaurant',
+        title: 'Kaz Sushi Bistro',
+        placeId: 'ChIJ36o9Bbq3t4kR66FGn7eZBwI'
+      }, {
+        position: new google.maps.LatLng(38.902141, -77.02519),
+        type: 'restaurant',
+        title: 'Acadiana',
+        placeId: 'ChIJt4IBrJO3t4kRXcbDiwauWYE'
+      }, {
+        position: new google.maps.LatLng(38.899542, -77.02038),
+        type: 'restaurant',
+        title: 'Wok & Roll',
+        placeId: 'ChIJXyx03o23t4kR4yjB3SO7mC8'
+      }, {
+        position: new google.maps.LatLng(38.902257, -77.00222),
+        type: 'restaurant',
+        title: 'Indigo',
+        placeId: 'ChIJ2TkEeSK4t4kRKfH6lYpF8m4'
+      }, {
+        position: new google.maps.LatLng(38.895274, -76.983337),
+        type: 'restaurant',
+        title: 'Far East Tacos Grille',
+        placeId: 'ChIJBd1Ty0a4t4kRPdKhDLq52aw'
+      }, {
+        position: new google.maps.LatLng(38.899836, -76.98705),
+        type: 'restaurant',
+        title: 'H Street Country Club',
+        placeId: 'ChIJE5FcCUC4t4kRKkuhQvsRpmc'
+      }, {
+        position: new google.maps.LatLng(38.929405, -76.991024),
+        type: 'restaurant',
+        title: "Brookland's Finest Bar and Kitchen",
+        placeId: 'ChIJYw5VrfPHt4kRCvZTX1soQYk'
+      }, {
+        position: new google.maps.LatLng(38.914631, -76.985541),
+        type: 'restaurant',
+        title: 'Ivy City Smokehouse, 1356 Okie St NE, Washington, DC 20002)',
+        placeId: 'ChIJCRSgFHO4t4kR-LVTtPHfsAI'
 
       }];
       console.log(restaurants)
 
       restaurants.forEach(function(place, x) {
         var icon = {
-            url: "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
-            size: new google.maps.Size(50, 50),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(25, 25)
+          url: "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+          size: new google.maps.Size(50, 50),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25)
         }
         var marker = new google.maps.Marker({
           map: map,
@@ -354,88 +352,88 @@ function googleMaps() {
     map.setZoom(13)
     if (this.checked === true) {
       var museums = [{
-          position: new google.maps.LatLng(38.896909, -77.023485),
-          type: 'museum',
-          title: 'International Spy Museum',
-          placeId: 'ChIJ7Y9_SpC3t4kRNidcpxFnLy0'
-          }, {
-          position: new google.maps.LatLng(38.887568, -77.019905),
-          type: 'museum',
-          title: 'National Air and Space Museum',
-          placeId: 'ChIJISQme4O3t4kRG-iM3TfJ5_g'
-        }, {
-          position: new google.maps.LatLng(38.893138, -77.019235),
-          type: 'museum',
-          title: 'Newseum',
-          placeId: 'ChIJh6P0dIW3t4kRms-j-mPoCNY'
-        }, {
-          position: new google.maps.LatLng(38.891064, -77.032614),
-          type: 'museum',
-          title: 'National Museum of African American History and Culture',
-          placeId: 'ChIJF4Mpspi3t4kRBi9jWNebAZg'
-        }, {
-          position: new google.maps.LatLng(38.888758, -77.025939),
-          type: 'museum',
-          title: 'Smithsonian Institution Building',
-          placeId: 'ChIJ71-la5y3t4kRQkpvV3YxbYI'
-        }, {
-          position: new google.maps.LatLng(38.897668, -77.026328),
-          type: 'museum',
-          title: 'Madame Tussauds DC',
-          placeId: 'ChIJ16xT35C3t4kR9LWKEG9Jqi0'
-        }, {
-          position: new google.maps.LatLng(38.892077, -77.019912),
-          type: 'museum',
-          title: 'National Gallery of Art',
-          placeId: 'ChIJSYxSO5u3t4kRm4eyKw_Y7Kg'
-        }, {
-          position: new google.maps.LatLng(38.891338, -77.029941),
-          type: 'museum',
-          title: 'National Museum of American History',
-          placeId: 'ChIJx7K17Ji3t4kR6h3neQYXsjI'
-        }, {
-          position: new google.maps.LatLng(38.905122, -77.03798),
-          type: 'museum',
-          title: "National Geographic Museum",
-          placeId: 'ChIJPQA-Fb-3t4kR-kEEP3W1kN4'
-        }, {
-          position: new google.maps.LatLng(38.886701, -77.032672),
-          type: 'museum',
-          title: 'U.S. Holocaust Memorial Museum',
-          placeId: 'ChIJZaAQK6C3t4kRsx10rk51z3M'
+        position: new google.maps.LatLng(38.896909, -77.023485),
+        type: 'museum',
+        title: 'International Spy Museum',
+        placeId: 'ChIJ7Y9_SpC3t4kRNidcpxFnLy0'
+      }, {
+        position: new google.maps.LatLng(38.887568, -77.019905),
+        type: 'museum',
+        title: 'National Air and Space Museum',
+        placeId: 'ChIJISQme4O3t4kRG-iM3TfJ5_g'
+      }, {
+        position: new google.maps.LatLng(38.893138, -77.019235),
+        type: 'museum',
+        title: 'Newseum',
+        placeId: 'ChIJh6P0dIW3t4kRms-j-mPoCNY'
+      }, {
+        position: new google.maps.LatLng(38.891064, -77.032614),
+        type: 'museum',
+        title: 'National Museum of African American History and Culture',
+        placeId: 'ChIJF4Mpspi3t4kRBi9jWNebAZg'
+      }, {
+        position: new google.maps.LatLng(38.888758, -77.025939),
+        type: 'museum',
+        title: 'Smithsonian Institution Building',
+        placeId: 'ChIJ71-la5y3t4kRQkpvV3YxbYI'
+      }, {
+        position: new google.maps.LatLng(38.897668, -77.026328),
+        type: 'museum',
+        title: 'Madame Tussauds DC',
+        placeId: 'ChIJ16xT35C3t4kR9LWKEG9Jqi0'
+      }, {
+        position: new google.maps.LatLng(38.892077, -77.019912),
+        type: 'museum',
+        title: 'National Gallery of Art',
+        placeId: 'ChIJSYxSO5u3t4kRm4eyKw_Y7Kg'
+      }, {
+        position: new google.maps.LatLng(38.891338, -77.029941),
+        type: 'museum',
+        title: 'National Museum of American History',
+        placeId: 'ChIJx7K17Ji3t4kR6h3neQYXsjI'
+      }, {
+        position: new google.maps.LatLng(38.905122, -77.03798),
+        type: 'museum',
+        title: "National Geographic Museum",
+        placeId: 'ChIJPQA-Fb-3t4kR-kEEP3W1kN4'
+      }, {
+        position: new google.maps.LatLng(38.886701, -77.032672),
+        type: 'museum',
+        title: 'U.S. Holocaust Memorial Museum',
+        placeId: 'ChIJZaAQK6C3t4kRsx10rk51z3M'
       }];
 
-      museums.forEach(function (place, x) {
-          var icon = {
-              url: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
-              size: new google.maps.Size(50, 50),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25)
-          }
-          var marker = new google.maps.Marker({
-              map: map,
-              position: place.position,
-              icon: icon,
-              title: place.title,
-              placeId: museums[x].placeId
+      museums.forEach(function(place, x) {
+        var icon = {
+          url: "https://maps.gstatic.com/mapfiles/place_api/icons/museum-71.png",
+          size: new google.maps.Size(50, 50),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25)
+        }
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.position,
+          icon: icon,
+          title: place.title,
+          placeId: museums[x].placeId
 
-          });
-          musMarker.push(marker)
-          google.maps.event.addListener(marker, 'click', function(location) {
-            placeId = marker.placeId
-            console.log("placeID", placeId)
-            console.log(this)
-            map.setZoom(18);
-            map.setCenter(location.latLng)
-            markerName = marker.title
-            placeDetails(placeId)
-            /*
-            testAPICall()
-            foursquareHTML()
-            */
-          })
         });
+        musMarker.push(marker)
+        google.maps.event.addListener(marker, 'click', function(location) {
+          placeId = marker.placeId
+          console.log("placeID", placeId)
+          console.log(this)
+          map.setZoom(18);
+          map.setCenter(location.latLng)
+          markerName = marker.title
+          placeDetails(placeId)
+          /*
+          testAPICall()
+          foursquareHTML()
+          */
+        })
+      });
     } else {
       // Clear out the old markers.
       musMarker.forEach(function(marker) {
@@ -510,11 +508,11 @@ function googleMaps() {
 
       hotels.forEach(function(place, x) {
         var icon = {
-            url: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
-            size: new google.maps.Size(50, 50),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(17, 34),
-            scaledSize: new google.maps.Size(25, 25)
+          url: "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+          size: new google.maps.Size(50, 50),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25)
         }
         var marker = new google.maps.Marker({
           map: map,
@@ -550,70 +548,68 @@ function googleMaps() {
   $("#Clubs-Bars").on("click", function() {
     map.setZoom(13)
     if (this.checked === true) {
-      var bars = [
-        {
-          position: new google.maps.LatLng(38.896455, -77.023434),
-          type: 'bar',
-          title: 'Penn Social',
-          placeId: 'ChIJPU9VOZC3t4kR3MoQpD-q830'
-        }, {
-          position: new google.maps.LatLng(38.899006, -77.022273),
-          type: 'bar',
-          title: 'Rocket Bar',
-          placeId: 'ChIJwd4e_ZG3t4kRZyhiqUfIXQM'
-        }, {
-          position: new google.maps.LatLng(38.905326, -77.065664),
-          type: 'bar',
-          title:'Georgetown Piano Bar',
-          placeId: 'ChIJAwHJ2Ui2t4kRWnehalqGX0k'
-        }, {
-          position: new google.maps.LatLng(38.904078, -77.037995),
-          type: 'bar',
-          title: 'Barcode',
-          placeId: 'ChIJtZtGJ7-3t4kR4_v7WdDfvFQ'
-        }, {
-          position: new google.maps.LatLng(38.917642, -77.031593),
-          type: 'bar',
-          title: 'Quarter Glory',
-          placeId: 'ChIJNzeivue3t4kR3j-ZPLZzqXg'
-        }, {
-          position: new google.maps.LatLng(38.916731, -77.037183),
-          type: 'bar',
-          title: 'Local 16',
-          placeId: 'ChIJAb66zdy3t4kRmADgbA-AMQo'
-        }, {
-          position: new google.maps.LatLng(38.909830, -77.048592),
-          type: 'bar',
-          title: 'The Fireplace',
-          placeId: 'ChIJ4Yh3pcm3t4kRLSFiblnrwvY'
-        }, {
-          position: new google.maps.LatLng(38.897577, -77.024745),
-          type: 'bar',
-          title: 'Ultrabar',
-          placeId: 'ChIJLd5HqpG3t4kR7SE4iLL4rKk'
-        }, {
-          position: new google.maps.LatLng(38.904645, -77.062472),
-          type: 'bar',
-          title: 'Blues Alley',
-          placeId: 'ChIJ6bJ4V0m2t4kRFm0ia824sLg'
-        }, {
-          position: new google.maps.LatLng(38.922091, -77.042144),
-          type: 'bar',
-          title: 'Bossa Bistro & Lounge',
-          placeId: 'ChIJs_CFK9q3t4kRj-NN5ekQYUE'
-        }, {
-          position: new google.maps.LatLng(38.920389, -77.041619),
-          type: 'bar',
-          title: 'Columbia Station Inc',
-          placeId: 'ChIJO-z9rdu3t4kRJjR2EBpY2Fc'
-        }
-      ]
+      var bars = [{
+        position: new google.maps.LatLng(38.896455, -77.023434),
+        type: 'bar',
+        title: 'Penn Social',
+        placeId: 'ChIJPU9VOZC3t4kR3MoQpD-q830'
+      }, {
+        position: new google.maps.LatLng(38.899006, -77.022273),
+        type: 'bar',
+        title: 'Rocket Bar',
+        placeId: 'ChIJwd4e_ZG3t4kRZyhiqUfIXQM'
+      }, {
+        position: new google.maps.LatLng(38.905326, -77.065664),
+        type: 'bar',
+        title: 'Georgetown Piano Bar',
+        placeId: 'ChIJAwHJ2Ui2t4kRWnehalqGX0k'
+      }, {
+        position: new google.maps.LatLng(38.904078, -77.037995),
+        type: 'bar',
+        title: 'Barcode',
+        placeId: 'ChIJtZtGJ7-3t4kR4_v7WdDfvFQ'
+      }, {
+        position: new google.maps.LatLng(38.917642, -77.031593),
+        type: 'bar',
+        title: 'Quarter Glory',
+        placeId: 'ChIJNzeivue3t4kR3j-ZPLZzqXg'
+      }, {
+        position: new google.maps.LatLng(38.916731, -77.037183),
+        type: 'bar',
+        title: 'Local 16',
+        placeId: 'ChIJAb66zdy3t4kRmADgbA-AMQo'
+      }, {
+        position: new google.maps.LatLng(38.909830, -77.048592),
+        type: 'bar',
+        title: 'The Fireplace',
+        placeId: 'ChIJ4Yh3pcm3t4kRLSFiblnrwvY'
+      }, {
+        position: new google.maps.LatLng(38.897577, -77.024745),
+        type: 'bar',
+        title: 'Ultrabar',
+        placeId: 'ChIJLd5HqpG3t4kR7SE4iLL4rKk'
+      }, {
+        position: new google.maps.LatLng(38.904645, -77.062472),
+        type: 'bar',
+        title: 'Blues Alley',
+        placeId: 'ChIJ6bJ4V0m2t4kRFm0ia824sLg'
+      }, {
+        position: new google.maps.LatLng(38.922091, -77.042144),
+        type: 'bar',
+        title: 'Bossa Bistro & Lounge',
+        placeId: 'ChIJs_CFK9q3t4kRj-NN5ekQYUE'
+      }, {
+        position: new google.maps.LatLng(38.920389, -77.041619),
+        type: 'bar',
+        title: 'Columbia Station Inc',
+        placeId: 'ChIJO-z9rdu3t4kRJjR2EBpY2Fc'
+      }]
       var icon = {
-          url: "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
-          size: new google.maps.Size(50, 50),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(25, 25)
+        url: "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        size: new google.maps.Size(50, 50),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
       }
       bars.forEach(function(place, x) {
         var marker = new google.maps.Marker({
@@ -715,7 +711,10 @@ function googleMaps() {
         map.setZoom(18);
         map.setCenter(location.latLng)
         markerName = marker.title
+
+
         placeDetails(placeId)
+        testAPICall();
         /*
         testAPICall()
         foursquareHTML()
@@ -755,7 +754,7 @@ function testAPICall() {
   var queryURL = "https://api.foursquare.com/v2/venues/search?near=" + location + "&query=" + userVariable + "&v=" +
     date + "&m=foursquare" + "&client_secret=" + clientSecret + "&client_id=" + clientID;
 
-    console.log("queryURL", queryURL)
+  console.log("queryURL", queryURL)
 
   ///THIS URL WORKS
   //https://api.foursquare.com/v2/venues/search?near=seattle,wa&query=coffee&v=20150214&m=foursquare&client_secret=NXG25YHZAHDRIGFZ3W2ZHPM3MZVL3CPWXPEKTP3V11WT5A5V&client_id=0G2KKVAECBPFBYBT4SQU4MUCMF5IHQDVGCM1M4XK0EKJWQ53
@@ -787,49 +786,54 @@ function testAPICall() {
 
     //});
 
+    //
+    // var queryURL3 = "https://api.foursquare.com/v2/venues/" + idArray[i] + "?v=" +
+    //   date + "&client_secret=" + clientSecret + "&client_id=" + clientID;
+    //
+    // $.ajax({
+    //   url: queryURL3,
+    //   method: "GET"
+    // }).done(function(description) {
+    //   console.log(description);
+    //   var bestPic = description.response.venue.bestPhoto
+    //   console.log(bestPic);
+    //   //for (var i=0; i<bestPic.length; i++){
+    //   var prefix2 = bestPic.prefix;
+    //   var width2 = bestPic.width;
+    //   var height2 = bestPic.height;
+    //   var suffix2 = bestPic.suffix;
+    //   veryBestPic = prefix2 + width2 + height2 + suffix2
+    //   console.log("veryBestPic", veryBestPic)
+    //
+    //
+    // });
 
-      var queryURL3 = "https://api.foursquare.com/v2/venues/" +idArray[i] + "?v=" +
-        date + "&client_secret=" + clientSecret + "&client_id=" + clientID;
-
-      $.ajax({
+    var queryURL3 = "https://api.foursquare.com/v2/venues/" + idArray[i] + "?v=" +
+      date + "&client_secret=" + clientSecret + "&client_id=" + clientID;
+    $.ajax({
       url: queryURL3,
       method: "GET"
-    }).done(function(description) {
-      console.log(description);
-      var bestPic = description.response.venue.bestPhoto
-      console.log(bestPic);
-      //for (var i=0; i<bestPic.length; i++){
-      var prefix2 = bestPic.prefix;
-      var width2 = bestPic.width;
-      var height2 = bestPic.height;
-      var suffix2 = bestPic.suffix;
-      veryBestPic = prefix2+width2+height2+suffix2
-      console.log("veryBestPic", veryBestPic)
+    }).done(function(checkins) {
+      console.log(checkins);
+      popularity = checkins.response.venue.stats.checkinsCount
+      $("#markerCheckins1").text(popularity)
+
+
+      //document.getElementById("#markerCheckins").innerHTML = popularity;
+      console.log("checkins:", popularity);
 
 
     });
+    //  console.log(prefix2)
 
-    var queryURL3 = "https://api.foursquare.com/v2/venues/" +idArray[i] + "?v=" +
-      date + "&client_secret=" + clientSecret + "&client_id=" + clientID;
-    $.ajax({
-    url: queryURL3,
-    method: "GET"
-  }).done(function(checkins) {
-    console.log(checkins);
-    popularity = checkins.response.venue.stats.checkinsCount
-    console.log("checkins:",popularity);
+    // console.log(photo);
+    // console.log(dataTwo)
 
-
-  });
-  //  console.log(prefix2)
-
-      // console.log(photo);
-      // console.log(dataTwo)
-
-    })
+  })
 };
 
-function foursquareHTML(){
+
+function foursquareHTML() {
   $("#markerCheckins").append(placeDetailsModal)
   jQuery.noConflict();
   $("#markerModal").modal()
@@ -838,49 +842,64 @@ function foursquareHTML(){
 //FOURSQUARE-API---------------------------------------------------------------
 
 //Google Maps Place Details//
-function placeDetails(placeId){
-        $("#markerName").empty()
-        $("#markerCheckins").empty()
-        // Clear out the old markers.
-        placeMarker.forEach(function(marker) {
-          marker.setMap(null);
-        })
+function placeDetails(placeId) {
+  $("#markerName").empty()
+  $("#markerCheckins").empty()
 
-        var infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
+  // Clear out the old markers.
+  placeMarker.forEach(function(marker) {
+    marker.setMap(null);
+  })
 
-        service.getDetails({
-          placeId: placeId
-        }, function(place, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
+  var infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
 
-            var icon = {
-              url: place.icon,
-              size: new google.maps.Size(50, 50),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25)
-            };
-            marker = new google.maps.Marker({
-              map: map,
-              icon: icon,
-              position: place.geometry.location
-            });
+  service.getDetails({
+    placeId: placeId
+  }, function(place, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
 
-            placeMarker.push(marker)
+      var icon = {
+        url: place.icon,
+        size: new google.maps.Size(50, 50),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+      marker = new google.maps.Marker({
+        map: map,
+        icon: icon,
+        position: place.geometry.location
+      });
 
-            google.maps.event.addListener(marker, 'click', function() {
-              var placeDetailsTitle = (place.name)
-              var placeDetailsModal = ('<div><img src="' +  place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">' + '<br>' +
-                place.formatted_address + '<br>' + 'Average User Rating: '+ place.rating +'/5'+ '<br>' + 'Price Level: '+ place.price_level +'/5' + '<br>' + 'Phone Number: ' + place.international_phone_number + '<br>' + 'Official site: ' + '<a href="' + place.website + '">' + place.website + '</a>' + '<br>' + 'User Feedback: ' +  place.reviews["0"].author_name + '<br>' + 'Comments: ' + place.reviews["0"].text + '</div>');
+      placeMarker.push(marker)
 
-                $("#markerName").text(placeDetailsTitle)
-                $("#markerCheckins").append(placeDetailsModal)
-                jQuery.noConflict();
-                $("#markerModal").modal()
-            });
-          }
-          /*console.log('<img src="' + place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">')*/
-          console.log(place.reviews)
-        });
+      google.maps.event.addListener(marker, 'click', function() {
+        var placeDetailsTitle = (place.name)
+        var placeDetailsModal = ('<div><img src="' + place.photos["0"].getUrl({
+            'maxWidth': 200,
+            'maxHeight': 200
+          }) + '">' + '<br>' +
+          place.formatted_address + '<br>' + 'Average User Rating: ' + place.rating + '/5' + '<br>' + 'Price Level: ' + place.price_level + '/5' + '<br>' + 'Phone Number: ' + place.international_phone_number + '<br>' + 'Official site: ' + '<a href="' + place.website + '">' + place.website + '</a>' + '<br>' + 'User Feedback: ' + place.reviews["0"].author_name + '<br>' + 'Comments: ' + place.reviews["0"].text + '</div>');
+
+        $("#markerName").text(placeDetailsTitle)
+        $("#markerCheckins").append(placeDetailsModal)
+
+
+        jQuery.noConflict();
+        $("#markerModal").modal()
+
+      });
+
+      $("#markerName").empty();
+      $("#markerCheckins").empty();
+    }
+  //   $(".closebt").onclick = function(){
+  //   $("#markerName").empty();
+  //   $("#markerCheckins").empty();
+  //   placeDetailsModal.empty();
+  // };
+    /*console.log('<img src="' + place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">')*/
+    console.log(place.reviews)
+  });
 }
