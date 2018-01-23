@@ -680,8 +680,12 @@ function googleMaps() {
       marker.setMap(null);
     })
     barMarker = [];
-    // For each place, get the icon, name and location.
+    //store the bounds when panning around
     var bounds = new google.maps.LatLngBounds();
+    searchBox.setBounds(bounds)
+
+    // For each place, get the icon, name and location.
+
     places.forEach(function(place) {
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
