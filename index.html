@@ -32,7 +32,7 @@
   </div>
   <!-- /navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,15 +43,25 @@
         </li>
         <li>
           <div class="button-group">
-            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input id="Restaurant" type="checkbox"/>&nbsp;Restaurants</a></li>
-              <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input id="Museums" type="checkbox"/>&nbsp;Museums</a></li>
-              <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input id="Hotels" type="checkbox"/>&nbsp;Hotels</a></li>
-              <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input id="Clubs-Bars" type="checkbox"/>&nbsp;Clubs and Bars</a></li>
-            </ul>
+
+            <!-- <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></button> -->
+            <div class="dropdown">
+          <button class="btn btn-sm dropdown-toggle" type="button checkbox" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#" class="small" data-value="option1" tabIndex="1"><input id="Restaurant" type="checkbox"/>&nbsp;Restaurants</a>
+              <a class="dropdown-item" href="#"data-value="option2" tabIndex="1"><input id="Museums" type="checkbox"/>&nbsp;Museums</a>
+              <a class="dropdown-item" class="small" data-value="option3" tabIndex="1"><input id="Hotels" type="checkbox"/>&nbsp;Hotels</a>
+              <a class="dropdown-item" class="small" data-value="option4" tabIndex="1"><input id="Clubs-Bars" type="checkbox"/>&nbsp;Clubs and Bars</a>
+              </div>
+            <!-- <ul class="dropdown-menu">
+              <li><a href="#" class="small" data-value="option1" tabIndex="1"><input id="Restaurant" type="checkbox"/>&nbsp;Restaurants</a></li>
+              <li><a href="#" class="small" data-value="option2" tabIndex="1"><input id="Museums" type="checkbox"/>&nbsp;Museums</a></li>
+              <li><a href="#" class="small" data-value="option3" tabIndex="1"><input id="Hotels" type="checkbox"/>&nbsp;Hotels</a></li>
+              <li><a href="#" class="small" data-value="option4" tabIndex="1"><input id="Clubs-Bars" type="checkbox"/>&nbsp;Clubs and Bars</a></li>
+            </ul> -->
+
           </div>
-        </li>
+        <!-- </li> -->
         <li class="nav-item">
           <a class="nav-link" href="weather.html"></span> Weather</a>
         </li>
@@ -116,6 +126,7 @@
         </div>
       </div>
     </div>
+
   </div>
   <div class="container">
 
@@ -132,6 +143,12 @@
             <div class="row">
               <div class="col-md-12">
                 <p class="modalfont" id="markerCheckins"></p>
+                <p>Current Checkins : <span id="markerCheckins1">0</span></p>
+
+                  <div class="modal-footer">
+
+                  <button type="submit" class="btn btn-default btn-default pull-left closebt" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Close</button>
+                </div>
               </div>
             </div>
           </div>
@@ -139,7 +156,7 @@
       </div>
     </div>
   </div>
-  </div>
+
 
 
 
