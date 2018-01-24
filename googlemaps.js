@@ -530,6 +530,7 @@ function googleMaps() {
           map.setCenter(location.latLng)
           markerName = marker.title
           placeDetails(placeId)
+
         })
       });
     } else {
@@ -711,10 +712,8 @@ function googleMaps() {
         map.setZoom(18);
         map.setCenter(location.latLng)
         markerName = marker.title
-
-
+        testAPICall()
         placeDetails(placeId)
-        testAPICall();
         /*
         testAPICall()
         foursquareHTML()
@@ -750,15 +749,10 @@ function testAPICall() {
   var location = "Washington+DC"
   var date = "20180113"
 
-
   var queryURL = "https://api.foursquare.com/v2/venues/search?near=" + location + "&query=" + userVariable + "&v=" +
     date + "&m=foursquare" + "&client_secret=" + clientSecret + "&client_id=" + clientID;
 
   console.log("queryURL", queryURL)
-
-  ///THIS URL WORKS
-  //https://api.foursquare.com/v2/venues/search?near=seattle,wa&query=coffee&v=20150214&m=foursquare&client_secret=NXG25YHZAHDRIGFZ3W2ZHPM3MZVL3CPWXPEKTP3V11WT5A5V&client_id=0G2KKVAECBPFBYBT4SQU4MUCMF5IHQDVGCM1M4XK0EKJWQ53
-
 
   $.ajax({
     url: queryURL,
@@ -770,7 +764,6 @@ function testAPICall() {
     for (var i = 0; i < data.length; i++) {
       var picId = data[i].id;
       idArray.push(picId)
-
     };
     console.log("response", response);
 
@@ -778,11 +771,6 @@ function testAPICall() {
     console.log(picId)
     console.log(idArray.push(picId));
     console.log(idArray)
-
-
-
-
-
 
     //});
 
@@ -816,19 +804,9 @@ function testAPICall() {
     }).done(function(checkins) {
       console.log(checkins);
       popularity = checkins.response.venue.stats.checkinsCount
-      $("#markerCheckins1").text(popularity)
 
-
-      //document.getElementById("#markerCheckins").innerHTML = popularity;
       console.log("checkins:", popularity);
-
-
     });
-    //  console.log(prefix2)
-
-    // console.log(photo);
-    // console.log(dataTwo)
-
   })
 };
 
@@ -880,26 +858,17 @@ function placeDetails(placeId) {
             'maxWidth': 200,
             'maxHeight': 200
           }) + '">' + '<br>' +
-          place.formatted_address + '<br>' + 'Average User Rating: ' + place.rating + '/5' + '<br>' + 'Price Level: ' + place.price_level + '/5' + '<br>' + 'Phone Number: ' + place.international_phone_number + '<br>' + 'Official site: ' + '<a href="' + place.website + '">' + place.website + '</a>' + '<br>' + 'User Feedback: ' + place.reviews["0"].author_name + '<br>' + 'Comments: ' + place.reviews["0"].text + '</div>');
+          place.formatted_address + '<br>' + 'Average User Rating: ' + place.rating + '/5' + '<br>' + 'Price Level: ' + place.price_level + '/5' + '<br>' + 'Phone Number: ' + place.international_phone_number + '<br>' + 'Official site: ' + '<a href="' + place.website + '">' + place.website + '</a>' + '<br>' + 'User Feedback: ' + place.reviews["0"].author_name + '<br>' + 'Comments: ' + place.reviews["0"].text + '<br>' + '<br>' + 'Checkins: ' + popularity + '</div>');
 
         $("#markerName").text(placeDetailsTitle)
         $("#markerCheckins").append(placeDetailsModal)
-
 
         jQuery.noConflict();
         $("#markerModal").modal()
 
       });
-
-      $("#markerName").empty();
-      $("#markerCheckins").empty();
     }
-  //   $(".closebt").onclick = function(){
-  //   $("#markerName").empty();
-  //   $("#markerCheckins").empty();
-  //   placeDetailsModal.empty();
-  // };
-    /*console.log('<img src="' + place.photos["0"].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '">')*/
+
     console.log(place.reviews)
   });
 }
