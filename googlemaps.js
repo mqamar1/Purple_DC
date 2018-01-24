@@ -811,12 +811,6 @@ function testAPICall() {
 };
 
 
-function foursquareHTML() {
-  $("#markerCheckins").append(placeDetailsModal)
-  jQuery.noConflict();
-  $("#markerModal").modal()
-}
-
 //FOURSQUARE-API---------------------------------------------------------------
 
 //Google Maps Place Details//
