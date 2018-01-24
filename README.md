@@ -31,10 +31,10 @@ Object-Oriented Programming (OOP).
 
 ## **Features**
 
-- --Dynamic Google Maps updates to page, and allows user to stay on the web app, and switch to other features for other information.
-- --Foursquare integrations offers information about the venue's popularity.
-- --Users can also check weather forecast to plan their day to day activities while in the city. For example, if it's a rainy day, travelers can plan to spend time in nearby museums instead of visiting the Reflecting Pool.
-- --Responsive web application design allows different types of devices to access information.
+- Dynamic Google Maps updates to page, and allows user to stay on the web app, and switch to other features for other information.
+- Foursquare integrations offers information about the venue's popularity.
+- Users can also check weather forecast to plan their day to day activities while in the city. For example, if it's a rainy day, travelers can plan to spend time in nearby museums instead of visiting the Reflecting Pool.
+- Responsive web application design allows different types of devices to access information.
 
 ## **Code Example**
 
@@ -104,28 +104,28 @@ Most tests for this application are rune with a simple console.log()method. If t
 
 The Website is divided into three main sections:
 
-1.        Google Maps API
+1.    __Google Maps API__
 
-- --Dynamic search box to navigate desired locations and places of interest &amp; D.C. Recommended Locations for Restaurants, Museums, Hotels, and, Bars &amp; Clubs included in the navigation bar.
-- --Each will provide markers based on the current viewport.
-- --The markers that are generated can be clicked to provide a modul with a plethora of information about the desired location.
+- Dynamic search box to navigate desired locations and places of interest &amp; D.C. Recommended Locations for Restaurants, Museums, Hotels, and, Bars &amp; Clubs included in the navigation bar.
+- Each will provide markers based on the current viewport.
+- The markers that are generated can be clicked to provide a modul with a plethora of information about the desired location.
 
-2.         Weather
+2.    __Weather__
 
-- --A table is generated with the following 24-hours @ 3-hour intervals
+- A table is generated with the following 24-hours @ 3-hour intervals
 
-- --To generate the table two criteria are needed:
-- --The city name should be typed as accurate as possible
-- --The country should entered as 2-or-3 digit Country Code
-- --Example: Baltimore, US
-- --The table will display information for the Date &amp; Time(in Military Time), Weather Temperature at that time of day, and the Weather description for that time of day
-- --Example: 2018-01-24 03:00:00      44.85 F     Clear - clear sky
+- To generate the table two criteria are needed:
+- The city name should be typed as accurate as possible
+- The country should entered as 2-or-3 digit Country Code
+- Example: Baltimore, US
+- The table will display information for the Date &amp; Time(in Military Time), Weather Temperature at that time of day, and the Weather description for that time of day
+- Example: 2018-01-24 03:00:00      44.85 F     Clear - clear sky
 
-3.         Site Feedback
+3.    __Site Feedback__
 
-- --A form that provides the user with a outlet to display their experience with the website's information
-- --Name, Rating, Comments
-- --The information is displayed using firebase, in table format and the information is used by the Website to provide a better user experience and to help guide future development
+- A form that provides the user with a outlet to display their experience with the website's information
+- Name, Rating, Comments
+- The information is displayed using firebase, in table format and the information is used by the Website to provide a better user experience and to help guide future development
 
 ## **Credits**
 
