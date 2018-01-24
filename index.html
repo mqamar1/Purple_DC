@@ -3,120 +3,137 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+  <meta charset="utf-8">
   <title>Purple Entertainment</title>
 
 
   <!-- Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css">
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets\index.css">
 
-</head>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-
-<body>
-
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Purple Entertainment</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-      </div>
-
-    </div>
-    <!-- /navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">D.C. Recommendations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="weather.html">Weather</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="feedback.html">Site Feedback</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- /navbar -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" name="option" id="Restaurant" value="option1">
-            <label class="custom-control-label" for="Restaurant">
-            Restaurant
-          </label>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" name="option" id="Museums" value="option2">
-            <label class="custom-control-label" for="Museums">
-              Museums
-              </label>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" name="option" id="Hotels" value="option3">
-            <label class="custom-control-label" for="Hotels">
-              Hotels
-            </label>
-          </div>
-        </div>
-        <div class="col-md-3">
-
-          <div class="custom-control custom-checkbox">
-            <input class="custom-control-input" type="checkbox" name="option" id="Clubs-Bars" value="option4">
-            <label class="custom-control-label" for="Clubs-Bars">
-              Clubs and Bars
-              </label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--Google Maps Display-->
-    <div class="container">
-      <div class="row">
-        <div class="map col-md-12">
-          <!--First Map -->
-          <h3>Search a location & activity to display in the current extent:</h3>
-          <input id="pac-input" class="controls" type="text" placeholder="Search Locations">
-          <div id="map"></div>
-        </div>
-      </div>
-    </div>
-
+  <link href="https://fonts.googleapis.com/css?family=Alef" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
   <!--Boostrap & jQuery-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
+</head>
+
+
+<body>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container my-container">
+      <h1 class="display-4">Purple Entertainment</h1>
+      <p class="lead">An app to guide you on your journey through all places & sizes!</p>
+    </div>
+  </div>
+
+  <!-- /navbar -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark my-nav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+
+
+        <li class="nav-item active my-nav-link">
+          <h3><a class="nav-link grow" href="index.html"> D.C. Recommendations</a></h3>
+
+          <div class="button-group">
+            <button type="button" class="btn btn-default btn-sm my-btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-styles">
+              <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input id="Restaurant" type="checkbox" />&nbsp;Restaurants</a></li>
+              <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input id="Museums" type="checkbox" />&nbsp;Museums</a></li>
+              <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input id="Hotels" type="checkbox" />&nbsp;Hotels</a></li>
+              <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input id="Clubs-Bars" type="checkbox"/>&nbsp;Clubs and Bars</a></li>
+            </ul>
+          </div>
+
+        </li>
+
+        <li class="nav-item my-nav-link">
+          <h3><a class="nav-link grow" href="weather.html"></span> Weather</a></h3>
+        </li>
+        <li class="nav-item my-nav-link">
+          <h3><a class="nav-link grow" href="feedback.html"> Site Feedback</a></h3>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- /navbar -->
+
+  <!--Google Maps Display-->
+  <div class="container">
+    <div class="row">
+      <div class="map col-md-12 my-styles">
+        <!--First Map -->
+        <h3 class="my-map-text">Search a location & activity to display in the current extent:</h3>
+        <input id="pac-input" class="controls" type="text" placeholder="Search Locations">
+        <div id="map"></div>
+        <div id="infowindow-content">
+          <span id="place-name" class="title"></span><br> Place ID <span id="place-id"></span><br>
+          <span id="place-address"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+
+    <!-- Modal -->
+    <div class="modal fade" id="markerModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 style="color:red;" id="markerName"></h4>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <p class="modalfont" id="markerCheckins"></p>
+                <p id="markerCheckins1">Current Checkins :</p>
+
+                  <div class="modal-footer">
+
+                  <button type="submit" class="btn btn-default btn-default pull-left closebt" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="my-footer">
+    <p>Purple Entertainment 2017 ©</p>
+  </footer>
+
   <!--Google Maps Script-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
   <script type="text/javascript" src="googlemaps.js"></script>
   <script type="text/javascript" src="weather.js"></script>
 
-  <script type="text/javascript" src="firebase.js"></script>
-
-
   <!--jQuery CDN-->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-
   <!--Foursquare Script-->
-  <script type="text/javascript" src="foursquare.js"></script>
+
 </body>
 
 </html>
-
