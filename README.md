@@ -57,13 +57,13 @@ When a Google Marker is clicked, the place’s details are added to a modul:
 
 **Prerequisites:**
 
-- --Fork and/or clone repository to your local environment.
+- Fork and/or clone repository to your local environment.
 
 **Requirements:**
 
-- --Web Browser
-- --Web Developer Tools
-- --Text Editor
+- Web Browser
+- Web Developer Tools
+- Text Editor
 
 ## **API Reference**
 
