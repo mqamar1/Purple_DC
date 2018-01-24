@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css">
   <link rel="stylesheet" href="assets\index.css">
+ rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 
@@ -46,17 +48,42 @@
     <div class="container">
       <!--Form Section-->
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-        </br>
-          <h2>User Reviews</h2>
-          <div class="row">
-            <div class="imgSection col-lg-12">
+<div class="col-md-4">
+
+          <form id="firebaseForm" action="feedbackForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="names" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <label for="rating_simple1">Rating</label>
+            </br>
+              <select name="my_input1" id="rating_simple1" required>
+                <option value="0" selected="selected">---Select---</option>
+                <option value="&#9734;">&#9734;</option>
+                <option value="&#9734;&#9734;">&#9734;&#9734;</option>
+                <option value="&#9734;&#9734;&#9734;">&#9734;&#9734;&#9734;</option>
+                <option value="&#9734;&#9734;&#9734;&#9734;">&#9734;&#9734;&#9734;&#9734;</option>
+                <option value="&#9734;&#9734;&#9734;&#9734;&#9734;">&#9734;&#9734;&#9734;&#9734;&#9734;</option>
+              </select>
+
+            </div>
+            <div class="form-group">
+              <label for="comment">Comments</label>
+              <textarea class="form-control" name ="comments" id="comment" rows="3" placeholder="Feedback" required></textarea>
+            </div>
+
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+          </form>
+
+        </div>
+
+            <div class="imgSection col-md-8">
               <table class="table">
           <thead>
             <tr id="userReview">
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
+              <th scope="col">User</th>
+              <th scope="col">Rating</th>
               <th scope="col">Comments</th>
             </tr>
           </thead>
@@ -65,21 +92,8 @@
           </tbody>
         </table>
             </div>
-          </div>
-          <form class="pure-form pure-form-stacked">
-    <fieldset>
-        <label for="name">Name</label>
-        <input id="name" type="text">
-        <label for="email">Email</label>
-        <input id="emailinput" type="email">
-        <label for="comments">Comments</label>
-        <input id="comment" type="text" >
-      </br>
-        <button type="submit" class="pure-button pure-button-primary">Submit</button>
-    </fieldset>
-</form>
+
         </div>
-        <div class="col-md-2"></div>
       </div>
     </div>
   </div>
@@ -96,6 +110,10 @@
   <script type="text/javascript" src="googlemaps.js"></script>
   <script type="text/javascript" src="weather.js"></script>
   <script type="text/javascript" src="firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+
+
 </body>
 
 </html>
