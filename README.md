@@ -113,7 +113,6 @@ The Website is divided into three main sections:
 2.    __Weather__
 
 - A table is generated with the following 24-hours @ 3-hour intervals
-
 - To generate the table two criteria are needed:
 - The city name should be typed as accurate as possible
 - The country should entered as 2-or-3 digit Country Code
