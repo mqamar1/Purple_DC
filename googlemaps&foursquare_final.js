@@ -14,7 +14,7 @@ var placeMarker = []
 
 function googleMaps() {
 
-  //creates map in HTML centered on Washington, D.C.
+  //Creates map in HTML centered on Washington, D.C.
   map = new google.maps.Map(document.getElementById('map'), {
     center: {
       lat: 38.9072,
@@ -244,7 +244,7 @@ function googleMaps() {
     markerName = ""
     markersNameArray = []
   });;
-  //Add Recommended Restaurants to Map
+  //Add Recommended DC Restaurants to Map
   $("#Restaurant").on("click", function() {
     map.setZoom(13)
 
@@ -319,6 +319,7 @@ function googleMaps() {
           placeId: restaurants[x].placeId
         });
         restMarker.push(marker)
+        //Click event to add gather marker place information needed for FourSquare & Place Details Function
         google.maps.event.addListener(marker, 'click', function(location) {
           placeId = marker.placeId
 
@@ -338,13 +339,14 @@ function googleMaps() {
       })
       restMarker = [];
     }
+    //Clear out searchbox markers when recommended checkbox clicked
     markers.forEach(function(marker) {
       marker.setMap(null);
     })
     markers = [];
 
   })
-  //Add Recommended Museums to Map
+  //Add Recommended DC Museums to Map
   $("#Museums").on("click", function() {
     map.setZoom(13)
     if (this.checked === true) {
@@ -417,6 +419,7 @@ function googleMaps() {
 
         });
         musMarker.push(marker)
+        //Click event to add gather marker place information needed for FourSquare & Place Details Function
         google.maps.event.addListener(marker, 'click', function(location) {
           placeId = marker.placeId
           console.log("placeID", placeId)
@@ -434,12 +437,13 @@ function googleMaps() {
       })
       musMarker = [];
     }
+    //Clear out searchbox markers when recommended checkbox clicked
     markers.forEach(function(marker) {
       marker.setMap(null);
     })
     markers = [];
   })
-  //Add Recommended Hotels to Map
+  //Add Recommended DC Hotels to Map
   $("#Hotels").on("click", function() {
     map.setZoom(13)
     if (this.checked === true) {
@@ -515,6 +519,7 @@ function googleMaps() {
           placeId: hotels[x].placeId
         });
         hotMarker.push(marker)
+        //Click event to add gather marker place information needed for FourSquare & Place Details Function
         google.maps.event.addListener(marker, 'click', function(location) {
           placeId = marker.placeId
           console.log("placeID", placeId)
@@ -532,12 +537,13 @@ function googleMaps() {
       })
       hotMarker = [];
     }
+    //Clear out searchbox markers when recommended checkbox clicked
     markers.forEach(function(marker) {
       marker.setMap(null);
     })
     markers = [];
   })
-  //Add Recommended Bars to Map
+  //Add Recommended DC Bars to Map
   $("#Clubs-Bars").on("click", function() {
     map.setZoom(13)
     if (this.checked === true) {
@@ -613,6 +619,7 @@ function googleMaps() {
           placeId: bars[x].placeId
         });
         barMarker.push(marker)
+        //Click event to add gather marker place information needed for FourSquare & Place Details Function
         google.maps.event.addListener(marker, 'click', function(location) {
           placeId = marker.placeId
           console.log("placeID", placeId)
@@ -630,6 +637,7 @@ function googleMaps() {
       })
       barMarker = [];
     }
+    //Clear out searchbox markers when recommended checkbox clicked
     markers.forEach(function(marker) {
       marker.setMap(null);
     })
@@ -664,17 +672,16 @@ function googleMaps() {
       marker.setMap(null);
     })
     hotMarker = [];
-    // Clear out the Bar markers.
+    //Clear out the Bar markers.
     barMarker.forEach(function(marker) {
       marker.setMap(null);
     })
     barMarker = [];
-    //store the bounds when panning around
+    //Store the bounds when panning around
     var bounds = new google.maps.LatLngBounds();
     searchBox.setBounds(bounds)
 
     // For each place, get the icon, name and location.
-
     places.forEach(function(place) {
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
@@ -697,7 +704,7 @@ function googleMaps() {
       //Push marker to markers array
       markers.push(marker);
       console.log(markers)
-      //Click event to add Marker name to array to link with FourSquare
+      //Click event to add Marker name to array to link with FourSquare & Place Details Function
       google.maps.event.addListener(marker, 'click', function(location) {
         placeId = place.place_id
         console.log("placeID", placeId)
@@ -709,13 +716,14 @@ function googleMaps() {
         console.log("location name: ", markerName)
 
       })
+      //When creating markers, the zoom extent is adjusted to fit all markers in viewport
       if (place.geometry.viewport) {
-        // Only geocodes have viewport.
         bounds.union(place.geometry.viewport);
       } else {
         bounds.extend(place.geometry.location);
       }
     });
+
     map.fitBounds(bounds);
   });
 }
@@ -727,6 +735,7 @@ var idArray = [];
 
 function testAPICall() {
   idArray = [];
+  //'markerName' global variable gathers name from Marker clicked in Google Maps viewport & used to initiate URL functionality of FourSquare query
   var userVariable = markerName
 
   console.log("userVariable", userVariable)
@@ -759,29 +768,6 @@ function testAPICall() {
     console.log(idArray.push(picId));
     console.log(idArray)
 
-    //});
-
-    //
-    // var queryURL3 = "https://api.foursquare.com/v2/venues/" + idArray[i] + "?v=" +
-    //   date + "&client_secret=" + clientSecret + "&client_id=" + clientID;
-    //
-    // $.ajax({
-    //   url: queryURL3,
-    //   method: "GET"
-    // }).done(function(description) {
-    //   console.log(description);
-    //   var bestPic = description.response.venue.bestPhoto
-    //   console.log(bestPic);
-    //   //for (var i=0; i<bestPic.length; i++){
-    //   var prefix2 = bestPic.prefix;
-    //   var width2 = bestPic.width;
-    //   var height2 = bestPic.height;
-    //   var suffix2 = bestPic.suffix;
-    //   veryBestPic = prefix2 + width2 + height2 + suffix2
-    //   console.log("veryBestPic", veryBestPic)
-    //
-    //
-    // });
 
     var queryURL3 = "https://api.foursquare.com/v2/venues/" + idArray[i] + "?v=" +
       date + "&client_secret=" + clientSecret + "&client_id=" + clientID;
@@ -797,11 +783,11 @@ function testAPICall() {
   })
 };
 
-
 //FOURSQUARE-API---------------------------------------------------------------
 
 //Google Maps Place Details//
 function placeDetails(placeId) {
+  //Clear out modul for next Marker Details
   $("#markerName").empty()
   $("#markerCheckins").empty()
 
@@ -810,9 +796,8 @@ function placeDetails(placeId) {
     marker.setMap(null);
   })
 
-  var infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
-
+  //Service request for Place Details, use placeId generated from googleMaps function when marker is clicked
   service.getDetails({
     placeId: placeId
   }, function(place, status) {
@@ -834,6 +819,7 @@ function placeDetails(placeId) {
 
       placeMarker.push(marker)
 
+      //Generate Place Details information into Modul window
       google.maps.event.addListener(marker, 'click', function() {
         var placeDetailsTitle = (place.name)
         var placeDetailsModal = ('<div><img src="' + place.photos["0"].getUrl({
