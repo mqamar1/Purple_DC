@@ -51,6 +51,9 @@ $("#weatherSubmit").on("click", function(){
             tRow.append(tempTD)
             tRow.append(weatherDescTD)
             tRow.append(weatherTimeTD)
+
           }
       })
+      jQuery.noConflict();
+      $("#weatherModal").modal()
 })

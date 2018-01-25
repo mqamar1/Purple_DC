@@ -321,16 +321,13 @@ function googleMaps() {
         restMarker.push(marker)
         google.maps.event.addListener(marker, 'click', function(location) {
           placeId = marker.placeId
+
           console.log("placeID", placeId)
           console.log(this)
-          map.setZoom(18);
-          map.setCenter(location.latLng)
           markerName = marker.title
-          placeDetails(placeId)
-          /*
           testAPICall()
-          foursquareHTML()
-          */
+          placeDetails(placeId)
+
 
         })
       });
@@ -424,14 +421,10 @@ function googleMaps() {
           placeId = marker.placeId
           console.log("placeID", placeId)
           console.log(this)
-          map.setZoom(18);
-          map.setCenter(location.latLng)
           markerName = marker.title
-          placeDetails(placeId)
-          /*
           testAPICall()
-          foursquareHTML()
-          */
+          placeDetails(placeId)
+
         })
       });
     } else {
@@ -526,9 +519,8 @@ function googleMaps() {
           placeId = marker.placeId
           console.log("placeID", placeId)
           console.log(this)
-          map.setZoom(18);
-          map.setCenter(location.latLng)
           markerName = marker.title
+          testAPICall()
           placeDetails(placeId)
 
         })
@@ -625,9 +617,9 @@ function googleMaps() {
           placeId = marker.placeId
           console.log("placeID", placeId)
           console.log(this)
-          map.setZoom(18);
-          map.setCenter(location.latLng)
+
           markerName = marker.title
+          testAPICall()
           placeDetails(placeId)
         })
       });
@@ -709,15 +701,10 @@ function googleMaps() {
       google.maps.event.addListener(marker, 'click', function(location) {
         placeId = place.place_id
         console.log("placeID", placeId)
-        map.setZoom(18);
-        map.setCenter(location.latLng)
         markerName = marker.title
         testAPICall()
         placeDetails(placeId)
-        /*
-        testAPICall()
-        foursquareHTML()
-        */
+
         location = location.latLng
         console.log("location name: ", markerName)
 
@@ -841,7 +828,8 @@ function placeDetails(placeId) {
       marker = new google.maps.Marker({
         map: map,
         icon: icon,
-        position: place.geometry.location
+        position: place.geometry.location,
+        zIndex: 9999999
       });
 
       placeMarker.push(marker)
