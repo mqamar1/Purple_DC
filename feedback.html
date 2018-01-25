@@ -9,10 +9,11 @@
   <!-- Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets\index.css">
- rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
   <!-- Fonts -->
@@ -41,8 +42,8 @@
 
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
-        <div class="collapse navbar-collapse" id="navbarColor01">
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
 
 
@@ -62,19 +63,18 @@
   <!-- /navbar -->
 
 
-      <!--Form Section-->
-      <div class="row">
-<div class="col-md-4">
+  <!--Form Section-->
+  <div class="row">
+    <div class="col-md-4">
 
-          <form id="firebaseForm" action="feedbackForm">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" name="names" class="form-control" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <label for="rating_simple1">Rating</label>
-            </br>
-              <select name="my_input1" id="rating_simple1" required>
+      <form id="firebaseForm" action="feedbackForm" onsubmit="return validateForm(name, comment, rating)">
+        <label for="name">Name</label>
+        <input type="text" name="names" class="form-control" id="name" placeholder="Your Name" required>
+      </br>
+
+        <label for="rating_simple1">Rating</label>
+        </br>
+        <select name="my_input1" id="rating_simple1" required>
                 <option value="0" selected="selected">---Select---</option>
                 <option value="&#9734;">&#9734;</option>
                 <option value="&#9734;&#9734;">&#9734;&#9734;</option>
@@ -82,35 +82,52 @@
                 <option value="&#9734;&#9734;&#9734;&#9734;">&#9734;&#9734;&#9734;&#9734;</option>
                 <option value="&#9734;&#9734;&#9734;&#9734;&#9734;">&#9734;&#9734;&#9734;&#9734;&#9734;</option>
               </select>
+        </br>
+        <label for="comment">Comments</label>
+        <textarea class="form-control" name="comments" id="comment" rows="3" placeholder="Feedback" required></textarea>
 
+      </br>
+        <button type="submit" class="pure-button pure-button-primary">Submit</button>
+      </form>
+
+    </div>
+
+    <div class="imgSection col-md-8">
+      <table class="table">
+        <thead>
+          <tr id="userReview">
+            <th scope="col">User</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Comments</th>
+          </tr>
+        </thead>
+        <tbody id="userTable">
+          <!-- trows go here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+  <div class="col-md-2"></div>
+  </div>
+  </div>
+  <div class="container">
+
+    <!-- Modal -->
+    <div class="modal fade" id="feedbackModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="modalfont" id="submitFeedback"></h1>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="comment">Comments</label>
-              <textarea class="form-control" name ="comments" id="comment" rows="3" placeholder="Feedback" required></textarea>
-            </div>
-
-            <button type="submit" class="pure-button pure-button-primary">Submit</button>
-          </form>
-
-        </div>
-
-            <div class="imgSection col-md-8">
-              <table class="table">
-          <thead>
-            <tr id="userReview">
-              <th scope="col">User</th>
-              <th scope="col">Rating</th>
-              <th scope="col">Comments</th>
-            </tr>
-          </thead>
-          <tbody id="userTable">
-         <!-- trows go here -->
-          </tbody>
-        </table>
-            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-2"></div>
     </div>
   </div>
   <!-- </div> -->
@@ -127,7 +144,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
   <!--Google Maps Script-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
+
   <script type="text/javascript" src="googlemaps.js"></script>
   <script type="text/javascript" src="weather.js"></script>
   <script type="text/javascript" src="firebase.js"></script>

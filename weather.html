@@ -22,6 +22,12 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,700i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
+  <!--Boostrap & jQuery-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body>
@@ -30,7 +36,7 @@
     <div class="container my-container">
       <h1 class="display-4">Purple Entertainment</h1>
       <p class="lead">An app to guide you on your journey through all places & sizes!</p>
-    </div>    
+    </div>
   </div>
   <!-- /navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark my-nav">
@@ -67,7 +73,19 @@
           <input type="text" class="form-control" placeholder="Country, Example: US" id="weatherCC">
         </div>
         <input type="submit" name="submit" value="Submit" id="weatherSubmit">
-        <div>
+
+      </div>
+      <div class="map col-md-2"></div>
+    </div>
+  </div>
+  <div class="container">
+
+    <!-- Modal -->
+    <div class="modal fade" id="weatherModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
           <table class="table table-hover">
             <thead>
               <tr class="bg-success text-black">
@@ -86,24 +104,31 @@
             <tbody id="forecastDisplay">
             </tbody>
           </table>
+
+          <div class="modal-footer">
+
+            <button type="submit" class="btn btn-default btn-default pull-left closebt" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Close</button>
+          </div>
         </div>
       </div>
-      <div class="map col-md-2"></div>
     </div>
   </div>
   <footer class="my-footer">
     <p>Purple Entertainment 2017 ©</p>
   </footer>
 
-  <!--Boostrap & jQuery-->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
   <!--Google Maps Script-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOInqUXlCvmj2Ci9jifSJyGwhOHV3dxy4&libraries=places&callback=googleMaps" async defer></script>
   <script type="text/javascript" src="googlemaps.js"></script>
   <script type="text/javascript" src="weather.js"></script>
+
+  <!--jQuery CDN-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+  <!--Weather Script-->
+  <script type="text/javascript" src="weather.js"></script>
+
+
 </body>
 
 </html>
