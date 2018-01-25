@@ -1,4 +1,4 @@
-h1, h1.display4, h2, label, p,  h3 {
+h1, h1.display4, h2, p,  h3, th {
   color: white;
 }
 
@@ -60,7 +60,7 @@ h1 {
 .my-nav {
   background-color: #630f9b;
   border-bottom: 3px solid white;
-  padding-left: 19em;
+  padding-left: 9em;
 }
 
 .my-nav-link {
@@ -152,7 +152,7 @@ img{
   background-size:cover;
 }
 
-label{
+ th{
   font-size: 20px;
   padding-right:20px;
 }
@@ -267,7 +267,7 @@ input#pac-input.controls {
   display: inline;
 }
 .modalfont {
-  color: black;
+  color: red;
   text-shadow: none;
 }
 /*------------------------------------------------------------------------------
@@ -287,8 +287,8 @@ input#pac-input.controls {
   border-bottom: 0px;
 }
 td {
-  background-color: black;
-  color: white;
+
+  color: #630f9b;
 }
 .blackfont {
   color: black;
@@ -318,4 +318,48 @@ td {
     padding-top: 0.5em;
     opacity: 0.6;
   }
+}
+/*------------------------------------------------------------------------------
+/*Firebase CSS
+------------------------------------------------------------------------------*/
+
+
+#name{
+  width: 50%;
+}
+
+#rating_simple1{
+  height: 35px;
+
+}
+option{
+  font-size: 16px;
+}
+#comment{
+  width: 90%;
+}
+.tdform{
+font-size: 20px;
+color: white;
+}
+
+#firebaseForm{
+  padding-top: 20px;
+  margin-left: 20px;
+    padding-left: 20px;
+    background-color: white;
+    padding-bottom: 3em;
+    padding-top: 1em;
+    margin-top: 2em;
+    border-radius: 5px;
+  }
+
+
+
+
+label{
+  color: #630f9b;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+  font-size: 20px;
 }
