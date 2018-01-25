@@ -14,6 +14,7 @@ var placeMarker = []
 
 function googleMaps() {
 
+  var washingtonDC = new google.maps.LatLng(38.9072, -77.0369)
   //Creates map in HTML centered on Washington, D.C.
   map = new google.maps.Map(document.getElementById('map'), {
     center: {
@@ -247,6 +248,8 @@ function googleMaps() {
   //Add Recommended DC Restaurants to Map
   $("#Restaurant").on("click", function() {
     map.setZoom(13)
+    map.panTo(washingtonDC)
+
 
     if (this.checked === true) {
       var restaurants = [{
@@ -349,6 +352,8 @@ function googleMaps() {
   //Add Recommended DC Museums to Map
   $("#Museums").on("click", function() {
     map.setZoom(13)
+    map.panTo(washingtonDC)
+
     if (this.checked === true) {
       var museums = [{
         position: new google.maps.LatLng(38.896909, -77.023485),
@@ -446,6 +451,8 @@ function googleMaps() {
   //Add Recommended DC Hotels to Map
   $("#Hotels").on("click", function() {
     map.setZoom(13)
+    map.panTo(washingtonDC)
+
     if (this.checked === true) {
       var hotels = [{
           position: new google.maps.LatLng(38.905920, -77.048547),
@@ -546,6 +553,8 @@ function googleMaps() {
   //Add Recommended DC Bars to Map
   $("#Clubs-Bars").on("click", function() {
     map.setZoom(13)
+    map.panTo(washingtonDC)
+
     if (this.checked === true) {
       var bars = [{
         position: new google.maps.LatLng(38.896455, -77.023434),
