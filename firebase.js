@@ -1,4 +1,4 @@
-
+$(document).ready(function() {
 
 // Initialize Firebase
 var config = {
@@ -13,6 +13,8 @@ firebase.initializeApp(config);
 
 //Reference database
 var database = firebase.database();
+
+
 
 $(".pure-button").on("click", function(event){
 	event.preventDefault();
@@ -63,4 +65,7 @@ function validateForm(name, comment, rating) {
         $('#name').val('');
         $('#comment').val('');
       }
+
 retrieveData()
+
+})
