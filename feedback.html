@@ -70,6 +70,7 @@
       <form id="firebaseForm" action="feedbackForm" onsubmit="return validateForm(name, comment, rating)">
         <label for="name">Name</label>
         <input type="text" name="names" class="form-control" id="name" placeholder="Your Name" required>
+
       </br>
 
         <label for="rating_simple1">Rating</label>
@@ -82,11 +83,13 @@
                 <option value="&#9734;&#9734;&#9734;&#9734;">&#9734;&#9734;&#9734;&#9734;</option>
                 <option value="&#9734;&#9734;&#9734;&#9734;&#9734;">&#9734;&#9734;&#9734;&#9734;&#9734;</option>
               </select>
+
         </br>
         <label for="comment">Comments</label>
         <textarea class="form-control" name="comments" id="comment" rows="3" placeholder="Feedback" required></textarea>
 
       </br>
+
         <button type="submit" class="pure-button pure-button-primary">Submit</button>
       </form>
 

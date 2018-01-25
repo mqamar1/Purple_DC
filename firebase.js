@@ -39,6 +39,7 @@ function retrieveData(){
 
       var childSnapShot = snapshot.val()
       //Testing
+
       var nameTd = $("<td class='tdform'>").text(childSnapShot.name)
       var ratingTd = $("<td class='tdform'>").text(childSnapShot.rating)
       var commentTD = $("<td class='tdform'>").text(childSnapShot.comment)
@@ -46,12 +47,15 @@ function retrieveData(){
       tRow.append(nameTd,ratingTd,commentTD)
       tBody.prepend(tRow)
 
+
     })
 }
 
 function validateForm(name, comment, rating) {
+
     if (name === "" || comment === "" || rating === "0") {
         $("#submitFeedback").text("Please Answer All Fields")
+
         jQuery.noConflict();
         $("#feedbackModal").modal()
         return false;
